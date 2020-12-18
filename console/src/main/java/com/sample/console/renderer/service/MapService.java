@@ -1,4 +1,4 @@
-package com.sample.console.renderer;
+package com.sample.console.renderer.service;
 
 import java.io.InputStream;
 
@@ -8,7 +8,7 @@ public class MapService {
 
     private String fileName = "txt/map.txt";
 
-    public void loadMap(){
+    public void loadMap() {
         InputStream fileFromResourceAsStream = fileService.getFileFromResourceAsStream(fileName);
 
     }

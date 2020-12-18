@@ -1,0 +1,20 @@
+XXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXX
+X                                                                       X
+x                                                                       x
+x                                                                       x
+x   01000011                                                            x
+x        01101111                                                       x
+x              01110010                                                 x
+x                    01110010                                           x
+x                             01101001                                  x
+x                                       01100100                        x
+x                                              01101111                 x
+x                                                     01110010          x
+x                                                             01110011  x
+x                                                                       x
+x                                                                       x
+x                                                                       x
+x                                                                       x
+x                                                                       x
+x                                                                       x
+x                                                                       x

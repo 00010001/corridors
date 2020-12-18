@@ -1,4 +1,4 @@
-package com.sample.console.renderer;
+package com.sample.console.renderer.service;
 
 import java.io.IOException;
 

@@ -1,7 +1,10 @@
 package com.sample.base.model;
 
-public enum Stage {
+import java.io.Serializable;
+
+public enum Stage implements Serializable {
     MENU,
     CHARACTER_CREATION,
-    GAME
+    GAME,
+    GAME_SAVED
 }

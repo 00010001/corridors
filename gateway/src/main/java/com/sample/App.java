@@ -1,7 +1,7 @@
 package com.sample;
 
 
-import com.sample.game.GameService;
+import com.sample.game.service.GameService;
 
 public class App {
 
