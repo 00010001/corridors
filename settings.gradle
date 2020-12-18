@@ -1,0 +1,6 @@
+rootProject.name = 'corridors'
+include 'gateway'
+include 'console'
+include 'base'
+include 'game'
+

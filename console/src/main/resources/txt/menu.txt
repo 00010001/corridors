@@ -1,0 +1,31 @@
+XXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXX
+X                                                                       X
+x                                                                       x
+x                                                                       x
+x   01000011                                                            x
+x        01101111                                                       x
+x              01110010                                                 x
+x                    01110010                                           x
+x                             01101001                                  x
+x                                       01100100                        x
+x                                              01101111                 x
+x                                                     01110010          x
+x                                                             01110011  x
+x                                                                       x
+x                                                                       x
+x                                                                       x
+x                                                                       x
+x                                                                       x
+x                                                                       x
+x                                                                       x
+x                             (r)esume                                  x
+x                             (n)ew game                                x
+x                             (s)ave game                               x
+x                             (l)oad game                               x
+x                             (e)exit                                   x
+x                                                                       x
+x                                                                       x
+x                                                                       x
+x                                                                       x
+X                                                                       x
+XXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXX
