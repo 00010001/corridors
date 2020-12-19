@@ -17,7 +17,7 @@ public class GameLogicServiceTest {
         GameState gameState = new GameState();
         gameState.setPos(1, 1);
         gameState.direction(Direction.NORTH);
-        gameLogicService.processLogic(InputCommand.MOVE_AHEAD, gameState, null);
+        gameLogicService.processLogic(InputCommand.MOVE_AHEAD, gameState);
         Assert.assertEquals(gameState.getCol(), 1);
         Assert.assertEquals(gameState.getRow(), 0);
     }
@@ -27,7 +27,7 @@ public class GameLogicServiceTest {
         GameState gameState = new GameState();
         gameState.setPos(1, 1);
         gameState.direction(Direction.SOUTH);
-        gameLogicService.processLogic(InputCommand.MOVE_AHEAD, gameState, null);
+        gameLogicService.processLogic(InputCommand.MOVE_AHEAD, gameState);
         Assert.assertEquals(gameState.getCol(), 1);
         Assert.assertEquals(gameState.getRow(), 2);
     }
@@ -37,7 +37,7 @@ public class GameLogicServiceTest {
         GameState gameState = new GameState();
         gameState.setPos(1, 1);
         gameState.direction(Direction.WEST);
-        gameLogicService.processLogic(InputCommand.MOVE_AHEAD, gameState, null);
+        gameLogicService.processLogic(InputCommand.MOVE_AHEAD, gameState);
         Assert.assertEquals(gameState.getCol(), 0);
         Assert.assertEquals(gameState.getRow(), 1);
     }
@@ -47,7 +47,7 @@ public class GameLogicServiceTest {
         GameState gameState = new GameState();
         gameState.setPos(1, 1);
         gameState.direction(Direction.EAST);
-        gameLogicService.processLogic(InputCommand.MOVE_AHEAD, gameState, null);
+        gameLogicService.processLogic(InputCommand.MOVE_AHEAD, gameState);
         Assert.assertEquals(gameState.getCol(), 2);
         Assert.assertEquals(gameState.getRow(), 1);
     }

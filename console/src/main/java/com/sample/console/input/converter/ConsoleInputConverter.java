@@ -1,14 +1,15 @@
 package com.sample.console.input.converter;
 
-import com.sample.base.model.GameParameters;
+import com.sample.base.model.GameState;
 import com.sample.base.model.InputCommand;
 import com.sample.base.model.Stage;
 
 public class ConsoleInputConverter {
 
-    public InputCommand convert(GameParameters gameParameters, Stage currentStage, String userInput) {
+    public InputCommand convert(GameState gameState, String userInput) {
+        Stage currentStage = gameState.getStage();
         if (currentStage == Stage.MENU) {
-            return convertForMenu(gameParameters, userInput);
+            return convertForMenu(gameState, userInput);
         } else if (currentStage == Stage.CHARACTER_CREATION) {
             return convertForCharacterCreation(userInput);
         } else if (currentStage == Stage.GAME) {
@@ -26,24 +27,24 @@ public class ConsoleInputConverter {
         throw new IllegalArgumentException();
     }
 
-    private InputCommand convertForMenu(GameParameters gameParameters, String userInput) {
+    private InputCommand convertForMenu(GameState gameState, String userInput) {
         switch (userInput.toLowerCase()) {
             case "n":
                 return InputCommand.NEW_GAME;
             case "e":
                 return InputCommand.EXIT;
             case "l":
-                if (gameParameters.isLoadGameAvailable()) {
+                if (gameState.isLoadGameAvailable()) {
                     return InputCommand.LOAD_GAME;
                 }
                 throw new IllegalArgumentException();
             case "r":
-                if (gameParameters.isPlayerStartedGame()) {
+                if (gameState.isPlayerStartedGame()) {
                     return InputCommand.RESUME;
                 }
                 throw new IllegalArgumentException();
             case "s":
-                if (gameParameters.isPlayerStartedGame()) {
+                if (gameState.isPlayerStartedGame()) {
                     return InputCommand.SAVE_GAME;
                 }
                 throw new IllegalArgumentException();

@@ -1,6 +1,9 @@
 package com.sample.game.service;
 
-import com.sample.base.model.*;
+import com.sample.base.model.Direction;
+import com.sample.base.model.GameState;
+import com.sample.base.model.InputCommand;
+import com.sample.base.model.SaveData;
 import com.sample.base.model.factory.HeroFactory;
 import com.sample.base.model.factory.LevelFactory;
 import com.sample.base.model.level.Level;
@@ -15,16 +18,16 @@ public class GameLogicService {
     private final LevelFactory levelFactory = new LevelFactory();
     private final HeroFactory heroFactory = new HeroFactory();
 
-    public void processLogic(InputCommand inputCommand, GameState gameState, GameParameters gameParameters) {
+    public void processLogic(InputCommand inputCommand, GameState gameState) {
+        Direction direction = gameState.getDirection();
 
         switch (inputCommand) {
             case NEW_GAME:
                 gameState.setStage(CHARACTER_CREATION);
                 gameState.setDirection(Direction.NORTH);
-                gameState.setLevel(gameParameters.getLevel());
                 gameState.setHero(heroFactory.getById(0));
                 Level level = levelFactory.getByNumber(FIRST_LEVEL_NUMBER);
-                gameParameters.setLevel(level);
+                gameState.setLevel(level);
                 gameState.setCol(level.getStartingCol());
                 gameState.setRow(level.getStartingRow());
                 break;
@@ -40,7 +43,7 @@ public class GameLogicService {
                 break;
             case CHARACTER_SELECT:
                 gameState.setStage(GAME);
-                gameParameters.setPlayerStartedGame(true);
+                gameState.setPlayerStartedGame(true);
                 break;
             case MENU:
                 gameState.setStage(MENU);
@@ -51,23 +54,32 @@ public class GameLogicService {
             case SAVE_GAME:
                 saveGameService.saveGame(gameState);
                 gameState.setStage(GAME_SAVED);
-                gameParameters.setLoadGameAvailable(true);
+                gameState.setLoadGameAvailable(true);
                 break;
             case LOAD_GAME:
                 SaveData saveData = loadGameService.loadSaveData();
                 loadGameService.overwriteGameState(saveData, gameState);
-                gameParameters.setPlayerStartedGame(true);
+                gameState.setPlayerStartedGame(true);
                 gameState.setStage(GAME);
                 break;
             case TURN_LEFT:
-                gameState.setDirection(gameState.getDirection().turnLeft());
+                gameState.setDirection(direction.turnLeft());
                 break;
             case MOVE_AHEAD:
-                gameState.setCol(gameState.getCol() + gameState.getDirection().getColOffset());
-                gameState.setRow(gameState.getRow() + gameState.getDirection().getRowOffset());
+                //TODO check if can move?
+                //TODO can:
+                gameState.setCol(gameState.getCol() + direction.getColOffset());
+                gameState.setRow(gameState.getRow() + direction.getRowOffset());
+                gameState.getGameLog().add("Moved " + direction);
+                int mapValue = gameState.getLevel().getMap()[gameState.getRow()][gameState.getCol()];
+                if (mapValue == 3) {
+                    gameState.setStage(ITEM);
+                } else if (mapValue == 2) {
+                    gameState.setStage(FIGHT);
+                }
                 break;
             case TURN_RIGHT:
-                gameState.setDirection(gameState.getDirection().turnRight());
+                gameState.setDirection(direction.turnRight());
                 break;
         }
 

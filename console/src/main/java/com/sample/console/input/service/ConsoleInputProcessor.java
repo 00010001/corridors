@@ -1,6 +1,6 @@
 package com.sample.console.input.service;
 
-import com.sample.base.model.GameParameters;
+import com.sample.base.model.GameState;
 import com.sample.base.model.InputCommand;
 import com.sample.base.model.Stage;
 import com.sample.base.service.InputProcessor;
@@ -14,16 +14,16 @@ public class ConsoleInputProcessor implements InputProcessor {
     private final ConsoleInputConverter converter = new ConsoleInputConverter();
 
     @Override
-    public InputCommand getInputCommand(GameParameters gameParameters, Stage currentStage, boolean error) {
+    public InputCommand getInputCommand(GameState gameState, boolean error) {
         if (error) {
             System.out.print("wrong input try again. ");
         }
         System.out.print("Command: ");
         String command = scanner.nextLine();
         try {
-            return converter.convert(gameParameters, currentStage, command);
+            return converter.convert(gameState, command);
         } catch (IllegalArgumentException e) {
-            return getInputCommand(gameParameters, currentStage, true);
+            return getInputCommand(gameState, true);
         }
     }
 }

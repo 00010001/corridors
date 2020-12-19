@@ -1,6 +1,5 @@
 package com.sample.game.service;
 
-import com.sample.base.model.GameParameters;
 import com.sample.base.model.GameState;
 import com.sample.base.model.InputCommand;
 import com.sample.base.model.Stage;
@@ -18,8 +17,7 @@ public class GameService {
     private final LoadGameService loadGameService = new LoadGameService();
     private final GameLogicService gameLogicService = new GameLogicService();
 
-    private GameParameters gameParameters = new GameParameters();
-    private GameState gameState = new GameState();
+    private final GameState gameState = new GameState();
 
     public void start() {
         gameState.setStage(Stage.MENU);
@@ -28,8 +26,8 @@ public class GameService {
         if (loadGameAvailable) {
             loadGameAvailable = loadGameService.isSaveFileValid();
         }
-        gameParameters.setLoadGameAvailable(loadGameAvailable);
-        gameParameters.setLevel(new Level0());
+        gameState.setLoadGameAvailable(loadGameAvailable);
+        gameState.setLevel(new Level0());
         gameLoop();
     }
 
@@ -37,9 +35,9 @@ public class GameService {
 
         InputCommand inputCommand = null;
         while (inputCommand != InputCommand.EXIT) {
-            renderer.render(gameState, gameParameters);
-            inputCommand = inputProcessor.getInputCommand(gameParameters, gameState.getStage(), false);
-            gameLogicService.processLogic(inputCommand, gameState, gameParameters);
+            renderer.render(gameState);
+            inputCommand = inputProcessor.getInputCommand(gameState, false);
+            gameLogicService.processLogic(inputCommand, gameState);
         }
 
     }

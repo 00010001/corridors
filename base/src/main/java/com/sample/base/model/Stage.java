@@ -6,5 +6,7 @@ public enum Stage implements Serializable {
     MENU,
     CHARACTER_CREATION,
     GAME,
-    GAME_SAVED
+    GAME_SAVED,
+    ITEM,
+    FIGHT
 }

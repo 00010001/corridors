@@ -3,18 +3,48 @@ package com.sample.base.model;
 import com.sample.base.model.hero.Hero;
 import com.sample.base.model.level.Level;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GameState {
 
+    private boolean loadGameAvailable = false;
+    private boolean playerStartedGame = false;
     private Stage stage;
     private int row;
     private int col;
     private Direction direction;
     private Hero hero;
     private Level level;
+    private List<String> gameLog = new ArrayList<>();
 
     public void setPos(int row, int col){
         this.setRow(row);
         this.setCol(col);
+    }
+
+    public List<String> getGameLog() {
+        return gameLog;
+    }
+
+    public void setGameLog(List<String> gameLog) {
+        this.gameLog = gameLog;
+    }
+
+    public boolean isLoadGameAvailable() {
+        return loadGameAvailable;
+    }
+
+    public void setLoadGameAvailable(boolean loadGameAvailable) {
+        this.loadGameAvailable = loadGameAvailable;
+    }
+
+    public boolean isPlayerStartedGame() {
+        return playerStartedGame;
+    }
+
+    public void setPlayerStartedGame(boolean playerStartedGame) {
+        this.playerStartedGame = playerStartedGame;
     }
 
     public Stage getStage() {

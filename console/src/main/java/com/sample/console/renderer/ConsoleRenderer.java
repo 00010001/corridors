@@ -1,9 +1,7 @@
 package com.sample.console.renderer;
 
-import com.sample.base.model.GameParameters;
 import com.sample.base.model.GameState;
 import com.sample.base.model.Stage;
-import com.sample.base.model.factory.HeroFactory;
 import com.sample.base.service.Renderer;
 import com.sample.console.renderer.service.ConsoleService;
 import com.sample.console.renderer.service.FileService;
@@ -19,10 +17,10 @@ public class ConsoleRenderer implements Renderer {
     private final FileService fileService = new FileService();
 
     @Override
-    public void render(GameState gameState, GameParameters gameParameters) {
+    public void render(GameState gameState) {
         consoleService.clearScreen();
         if (gameState.getStage() == Stage.MENU) {
-            menuRenderer.render(gameParameters);
+            menuRenderer.render(gameState);
         } else if (gameState.getStage() == Stage.CHARACTER_CREATION) {
             characterCreationRenderer.render(gameState.getHero());
         } else if (gameState.getStage() == Stage.GAME) {

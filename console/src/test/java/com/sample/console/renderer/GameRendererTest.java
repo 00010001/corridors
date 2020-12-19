@@ -100,4 +100,17 @@ public class GameRendererTest {
         gameState.setPos(0, 2);
         assertEquals(0, MAP[gameState.getRow()][gameState.getCol()]);
     }
+
+    @Test
+    public void shouldGetLogEntry() {
+        GameState gameState = new GameState();
+        assertEquals("", gameRenderer.getLogEntry(gameState, 0));
+        gameState.getGameLog().add("1");
+        assertEquals("1", gameRenderer.getLogEntry(gameState, 0));
+        gameState.getGameLog().add("2");
+        assertEquals("2", gameRenderer.getLogEntry(gameState, 0));
+        assertEquals("1", gameRenderer.getLogEntry(gameState, 1));
+        assertEquals("", gameRenderer.getLogEntry(gameState, 2));
+
+    }
 }

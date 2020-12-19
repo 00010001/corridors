@@ -1,6 +1,6 @@
 package com.sample.console.renderer;
 
-import com.sample.base.model.GameParameters;
+import com.sample.base.model.GameState;
 import com.sample.console.renderer.service.FileService;
 
 import static com.sample.console.renderer.ConsoleRendererProperties.*;
@@ -9,16 +9,16 @@ public class MenuRenderer {
 
     private final FileService fileService = new FileService();
 
-    public void render(GameParameters gameParameters) {
+    public void render(GameState gameState) {
         FileService.printInputStream(fileService.getFileFromResourceAsStream(MENU_TOP_FILEPATH));
-        if (gameParameters.isPlayerStartedGame()) {
+        if (gameState.isPlayerStartedGame()) {
             System.out.println(RESUME);
         }
         System.out.println(NEW_GAME);
-        if (gameParameters.isPlayerStartedGame()) {
+        if (gameState.isPlayerStartedGame()) {
             System.out.println(SAVE_GAME);
         }
-        if (gameParameters.isLoadGameAvailable()) {
+        if (gameState.isLoadGameAvailable()) {
             System.out.println(LOAD_GAME);
         }
         System.out.println(EXIT);
