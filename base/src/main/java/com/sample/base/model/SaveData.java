@@ -6,8 +6,8 @@ import java.time.LocalDateTime;
 public class SaveData implements Serializable {
 
     private LocalDateTime localDateTime;
-    private int xPos;
-    private int yPos;
+    private int col;
+    private int row;
     private Direction direction;
     private int heroId;
     private int levelId;
@@ -20,27 +20,27 @@ public class SaveData implements Serializable {
         this.localDateTime = localDateTime;
     }
 
-    public int getxPos() {
-        return xPos;
+    public int getCol() {
+        return col;
     }
 
-    public void setxPos(int xPos) {
-        this.xPos = xPos;
+    public void setCol(int col) {
+        this.col = col;
     }
 
-    public int getyPos() {
-        return yPos;
+    public int getRow() {
+        return row;
     }
 
-    public void setyPos(int yPos) {
-        this.yPos = yPos;
+    public void setRow(int row) {
+        this.row = row;
     }
 
-    public Direction getPlayerDirection() {
+    public Direction getDirection() {
         return direction;
     }
 
-    public void setPlayerDirection(Direction direction) {
+    public void setDirection(Direction direction) {
         this.direction = direction;
     }
 
@@ -65,17 +65,17 @@ public class SaveData implements Serializable {
         return this;
     }
 
-    public SaveData xPos(final int xPos) {
-        this.xPos = xPos;
+    public SaveData col(final int col) {
+        this.col = col;
         return this;
     }
 
-    public SaveData yPos(final int yPos) {
-        this.yPos = yPos;
+    public SaveData row(final int row) {
+        this.row = row;
         return this;
     }
 
-    public SaveData playerDirection(final Direction direction) {
+    public SaveData direction(final Direction direction) {
         this.direction = direction;
         return this;
     }

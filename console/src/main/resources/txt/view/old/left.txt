@@ -1,0 +1,30 @@
+XXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXX
+X        | |          | |                        |             |        X
+x        | |     ~    | |                        |             |        x
+x        | |          | |                        |             |        x
+x        | |   ~      | |                        |             |        x
+x        | |       ~  | |                        |             |        x
+x        | |          | |                        |             |        x
+x        | |          | |                        |             |        x
+x        | |    ~     | |                        |             |        x
+x        | |          | |                        |             |        x
+x        | |  ~       | |                        |             |        x
+x        | |      ~   | |                        |             |        x
+x        | |          | |                        |             |        x
+x        | |          | |                        |             |        x
+x        | |   ~      | |------------------------|             |        x
+x        | |      ~   | /                        \             |        x
+x        | |          |/                          d            |        x
+x        | |    ~     /                            \           |        x
+x        | |         a                              d          |        x
+x        | |        /                                \         |        x
+x        | |   ~   a                                  d        |        x
+x        | |      /                                    \       |        x
+x        | |     a                                      d      |        x
+x        | |    /                                        \     |        x
+x        | |   a                                          d    |        x
+x        | |  /                                            \   |        x
+x        | | a                                              d  |        x
+x        | |/                                                \ |        x
+x        | /                                                  \|        x
+X        |-----------------------------------------------------|        x

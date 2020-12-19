@@ -4,8 +4,14 @@ public class ConsoleRendererProperties {
 
     public static final String MENU_TOP_FILEPATH = "txt/screen/menu_top.txt";
     public static final String MENU_BOT_FILEPATH = "txt/screen/menu_bot.txt";
-    public static final String BASE_GAME_0 = "txt/view/0.txt";
-    public static final String BASE_GAME_1 = "txt/view/1.txt";
+    public static final String FRONT = "txt/view/front.txt";
+    public static final String LEFT = "txt/view/left.txt";
+    public static final String FRONT_LEFT = "txt/view/frontleft.txt";
+    public static final String RIGHT = "txt/view/right.txt";
+    public static final String FRONT_RIGHT = "txt/view/frontright.txt";
+    public static final String LEFT_RIGHT = "txt/view/leftright.txt";
+
+    public static final String WALL = "txt/view/wall.txt";
 
     public static final String GAME_SAVED = "txt/screen/game_saved.txt";
 

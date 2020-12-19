@@ -33,9 +33,9 @@ public class SaveGameService {
                 .heroId(gameState.getHero().getId())
                 .levelId(gameState.getLevel().getId())
                 .localDateTime(LocalDateTime.now())
-                .playerDirection(gameState.getPlayerDirection())
-                .xPos(gameState.getxPos())
-                .yPos(gameState.getyPos());
+                .direction(gameState.getDirection())
+                .col(gameState.getCol())
+                .row(gameState.getRow());
     }
 
     public void createSaveFileIfNotExists() {

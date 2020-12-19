@@ -4,17 +4,17 @@ import java.io.Serializable;
 
 public enum Direction implements Serializable {
 
-    NORTH(0, 1),
-    WEST(1, 0),
-    SOUTH(0, -1),
-    EAST(-1, 0);
+    NORTH(0, -1),
+    WEST(-1, 0),
+    SOUTH(0, 1),
+    EAST(1, 0);
 
-    private final int xDiff;
-    private final int yDiff;
+    private final int colOffset;
+    private final int rowOffset;
 
-    Direction(int xDiff, int yDiff) {
-        this.xDiff = xDiff;
-        this.yDiff = yDiff;
+    Direction(int colOffset, int rowOffset) {
+        this.colOffset = colOffset;
+        this.rowOffset = rowOffset;
     }
 
     public Direction turnLeft() {
@@ -45,11 +45,11 @@ public enum Direction implements Serializable {
         return values().length;
     }
 
-    public int getxDiff() {
-        return xDiff;
+    public int getColOffset() {
+        return colOffset;
     }
 
-    public int getyDiff() {
-        return yDiff;
+    public int getRowOffset() {
+        return rowOffset;
     }
 }

@@ -4,7 +4,7 @@ import com.sample.base.model.GameParameters;
 import com.sample.base.model.GameState;
 import com.sample.base.model.InputCommand;
 import com.sample.base.model.Stage;
-import com.sample.base.model.level.Level1;
+import com.sample.base.model.level.Level0;
 import com.sample.base.service.InputProcessor;
 import com.sample.base.service.Renderer;
 import com.sample.console.input.service.ConsoleInputProcessor;
@@ -29,7 +29,7 @@ public class GameService {
             loadGameAvailable = loadGameService.isSaveFileValid();
         }
         gameParameters.setLoadGameAvailable(loadGameAvailable);
-        gameParameters.setLevel(new Level1());
+        gameParameters.setLevel(new Level0());
         gameLoop();
     }
 

@@ -1,7 +1,7 @@
 package com.sample.base.model;
 
 public enum InputCommand {
-    MOVE_UP,
+    MOVE_AHEAD,
     TURN_LEFT,
     TURN_RIGHT,
     CHARACTER_NEXT,

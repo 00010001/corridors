@@ -28,4 +28,3 @@ x        |   a                                              d  |        x
 x        |  /                                                \ |        x
 x        | /                                                  \|        x
 X        |-----------------------------------------------------|        x
-XXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXX

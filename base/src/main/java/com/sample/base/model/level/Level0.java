@@ -4,13 +4,16 @@ public class Level0 implements Level {
 
     private static final int ID = 0;
 
-    private static final int STARTING_X_POS = 1;
-    private static final int STARTING_Y_POS = 1;
+    private static final int STARTING_ROW = 1;
+    private static final int STARTING_COL = 1;
 
     private static final int[][] MAP = {
-            {0, 0, 0},
-            {0, 1, 0},
-            {0, 0, 0}
+            {0, 0, 0, 0, 0, 0},
+            {0, 1, 1, 1, 1, 0},
+            {0, 1, 0, 0, 1, 0},
+            {0, 1, 0, 0, 1, 0},
+            {0, 1, 1, 1, 1, 0},
+            {0, 0, 0, 0, 0, 0}
     };
 
     @Override
@@ -24,12 +27,12 @@ public class Level0 implements Level {
     }
 
     @Override
-    public int getStartingXPos() {
-        return STARTING_X_POS;
+    public int getStartingRow() {
+        return STARTING_ROW;
     }
 
     @Override
-    public int getStartingYPos() {
-        return STARTING_Y_POS;
+    public int getStartingCol() {
+        return STARTING_COL;
     }
 }

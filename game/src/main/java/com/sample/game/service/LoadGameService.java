@@ -32,9 +32,9 @@ public class LoadGameService {
         currentGameState
                 .level(levelFactory.getByNumber(loadedSaveData.getLevelId()))
                 .hero(heroFactory.getById(loadedSaveData.getHeroId()))
-                .playerDirection(loadedSaveData.getPlayerDirection())
-                .xPos(loadedSaveData.getxPos())
-                .yPos(loadedSaveData.getyPos());
+                .direction(loadedSaveData.getDirection())
+                .col(loadedSaveData.getCol())
+                .row(loadedSaveData.getRow());
     }
 
     public boolean isSaveFileValid() {

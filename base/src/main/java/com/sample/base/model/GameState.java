@@ -6,11 +6,16 @@ import com.sample.base.model.level.Level;
 public class GameState {
 
     private Stage stage;
-    private int xPos;
-    private int yPos;
+    private int row;
+    private int col;
     private Direction direction;
     private Hero hero;
     private Level level;
+
+    public void setPos(int row, int col){
+        this.setRow(row);
+        this.setCol(col);
+    }
 
     public Stage getStage() {
         return stage;
@@ -20,27 +25,27 @@ public class GameState {
         this.stage = stage;
     }
 
-    public int getxPos() {
-        return xPos;
+    public int getRow() {
+        return row;
     }
 
-    public void setxPos(int xPos) {
-        this.xPos = xPos;
+    public void setRow(int row) {
+        this.row = row;
     }
 
-    public int getyPos() {
-        return yPos;
+    public int getCol() {
+        return col;
     }
 
-    public void setyPos(int yPos) {
-        this.yPos = yPos;
+    public void setCol(int col) {
+        this.col = col;
     }
 
-    public Direction getPlayerDirection() {
+    public Direction getDirection() {
         return direction;
     }
 
-    public void setPlayerDirection(Direction direction) {
+    public void setDirection(Direction direction) {
         this.direction = direction;
     }
 
@@ -65,17 +70,17 @@ public class GameState {
         return this;
     }
 
-    public GameState xPos(final int xPos) {
-        this.xPos = xPos;
+    public GameState row(final int row) {
+        this.row = row;
         return this;
     }
 
-    public GameState yPos(final int yPos) {
-        this.yPos = yPos;
+    public GameState col(final int col) {
+        this.col = col;
         return this;
     }
 
-    public GameState playerDirection(final Direction direction) {
+    public GameState direction(final Direction direction) {
         this.direction = direction;
         return this;
     }

@@ -20,13 +20,13 @@ public class GameLogicService {
         switch (inputCommand) {
             case NEW_GAME:
                 gameState.setStage(CHARACTER_CREATION);
-                gameState.setPlayerDirection(Direction.NORTH);
+                gameState.setDirection(Direction.NORTH);
                 gameState.setLevel(gameParameters.getLevel());
                 gameState.setHero(heroFactory.getById(0));
                 Level level = levelFactory.getByNumber(FIRST_LEVEL_NUMBER);
                 gameParameters.setLevel(level);
-                gameState.setxPos(level.getStartingXPos());
-                gameState.setyPos(level.getStartingYPos());
+                gameState.setCol(level.getStartingCol());
+                gameState.setRow(level.getStartingRow());
                 break;
             case CHARACTER_NEXT:
                 int nextId;
@@ -60,12 +60,14 @@ public class GameLogicService {
                 gameState.setStage(GAME);
                 break;
             case TURN_LEFT:
-                gameState.setPlayerDirection(gameState.getPlayerDirection().turnLeft());
+                gameState.setDirection(gameState.getDirection().turnLeft());
                 break;
-            case MOVE_UP:
+            case MOVE_AHEAD:
+                gameState.setCol(gameState.getCol() + gameState.getDirection().getColOffset());
+                gameState.setRow(gameState.getRow() + gameState.getDirection().getRowOffset());
                 break;
             case TURN_RIGHT:
-                gameState.setPlayerDirection(gameState.getPlayerDirection().turnRight());
+                gameState.setDirection(gameState.getDirection().turnRight());
                 break;
         }
 

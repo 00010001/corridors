@@ -66,7 +66,7 @@ public class ConsoleInputConverter {
     private InputCommand convertForGame(String userInput) {
         switch (userInput.toLowerCase()) {
             case "w":
-                return InputCommand.MOVE_UP;
+                return InputCommand.MOVE_AHEAD;
             case "a":
                 return InputCommand.TURN_LEFT;
             case "d":
