@@ -40,7 +40,9 @@ public class GameRenderer {
     }
 
     String getFilePathToPrint(int facingValue, int leftFacingValue, int rightFacingValue) {
-        if (facingValue == 1 && leftFacingValue == 0 && rightFacingValue == 0) {
+        if (facingValue == 2) {
+            return SKELETON;
+        } else if (facingValue == 1 && leftFacingValue == 0 && rightFacingValue == 0) {
             return FRONT;
         } else if (facingValue == 1 && leftFacingValue == 1 && rightFacingValue == 0) {
             return FRONT_LEFT;
