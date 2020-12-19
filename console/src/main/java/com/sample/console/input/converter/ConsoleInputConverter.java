@@ -8,42 +8,64 @@ public class ConsoleInputConverter {
 
     public InputCommand convert(GameState gameState, String userInput) {
         Stage currentStage = gameState.getStage();
-        if (currentStage == Stage.MENU) {
-            return convertForMenu(gameState, userInput);
-        } else if (currentStage == Stage.CHARACTER_CREATION) {
-            return convertForCharacterCreation(userInput);
-        } else if (currentStage == Stage.MAIN_GAME) {
-            return convertForGame(userInput);
-        } else if (currentStage == Stage.GAME_SAVED) {
-            return convertForGameSaved(userInput);
-        } else if (currentStage == Stage.ITEM) {
-            return convertForItem(userInput);
-        } else if (currentStage == Stage.FIGHT) {
-            return convertForFight(userInput);
+        userInput = userInput.toLowerCase().trim();
+        switch (currentStage){
+            case MENU:
+                return convertForMenu(gameState, userInput);
+            case CHARACTER_CREATION:
+                return convertForCharacterCreation(userInput);
+            case MAIN_GAME:
+                return convertForGame(userInput);
+            case GAME_SAVED:
+                return convertForGameSaved(userInput);
+            case ITEM:
+                return convertForItem(userInput);
+            case FIGHT:
+                return convertForFight(userInput);
+            case ATTACKING_SKELETON:
+                return convertForAttacking(userInput);
         }
         throw new RuntimeException();
     }
 
-    private InputCommand convertForFight(String userInput) {
-        throw new IllegalArgumentException();
-    }
-
-    private InputCommand convertForItem(String userInput) {
-        if ("e".equals(userInput.toLowerCase())) {
-            return InputCommand.TAKE_ITEM;
+    private InputCommand convertForAttacking(String userInput) {
+        if ("c".equals(userInput)) {
+            return InputCommand.CONTINUE;
         }
         throw new IllegalArgumentException();
     }
 
+    private InputCommand convertForFight(String userInput) {
+        switch (userInput) {
+            case "a":
+                return InputCommand.ATTACK;
+            case "m":
+                return InputCommand.MENU;
+            default:
+                throw new IllegalArgumentException();
+        }
+    }
+
+    private InputCommand convertForItem(String userInput) {
+        switch (userInput) {
+            case "e":
+                return InputCommand.TAKE_ITEM;
+            case "m":
+                return InputCommand.MENU;
+            default:
+                throw new IllegalArgumentException();
+        }
+    }
+
     private InputCommand convertForGameSaved(String userInput) {
-        if ("r".equals(userInput.toLowerCase())) {
+        if ("r".equals(userInput)) {
             return InputCommand.RESUME;
         }
         throw new IllegalArgumentException();
     }
 
     private InputCommand convertForMenu(GameState gameState, String userInput) {
-        switch (userInput.toLowerCase()) {
+        switch (userInput) {
             case "n":
                 return InputCommand.NEW_GAME;
             case "e":
@@ -69,7 +91,7 @@ public class ConsoleInputConverter {
     }
 
     private InputCommand convertForCharacterCreation(String userInput) {
-        switch (userInput.toLowerCase()) {
+        switch (userInput) {
             case "n":
                 return InputCommand.CHARACTER_NEXT;
             case "s":
@@ -80,7 +102,7 @@ public class ConsoleInputConverter {
     }
 
     private InputCommand convertForGame(String userInput) {
-        switch (userInput.toLowerCase()) {
+        switch (userInput) {
             case "w":
                 return InputCommand.MOVE_AHEAD;
             case "a":

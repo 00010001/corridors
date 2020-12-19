@@ -12,5 +12,7 @@ public enum InputCommand {
     LOAD_GAME,
     EXIT,
     MENU,
+    CONTINUE,
+    ATTACK,
     TAKE_ITEM;
 }

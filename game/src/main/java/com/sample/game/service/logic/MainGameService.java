@@ -7,7 +7,7 @@ import com.sample.base.service.MapService;
 import com.sample.game.AppMessages;
 
 import static com.sample.base.model.Stage.*;
-import static com.sample.game.AppMessages.CANT_MOVE;
+import static com.sample.game.AppMessages.*;
 
 public class MainGameService {
 
@@ -21,27 +21,35 @@ public class MainGameService {
                 break;
             case TURN_LEFT:
                 gameState.setDirection(direction.turnLeft());
+                changeStateIfNeeded(gameState);
+                gameState.getGameLog().add(TURNED_LEFT);
+                break;
+            case TURN_RIGHT:
+                gameState.setDirection(direction.turnRight());
+                changeStateIfNeeded(gameState);
+                gameState.getGameLog().add(TURNED_RIGHT);
                 break;
             case MOVE_AHEAD:
                 if (MapService.getNextMapValue(gameState) == 1) {
                     gameState.setCol(gameState.getCol() + direction.getColOffset());
                     gameState.setRow(gameState.getRow() + direction.getRowOffset());
                     gameState.getGameLog().add(AppMessages.MOVED + direction);
-                    int nextMapValue = MapService.getNextMapValue(gameState);
-                    if (nextMapValue == 3) {
-                        gameState.setStage(ITEM);
-                    } else if (nextMapValue == 2) {
-                        gameState.setStage(FIGHT);
-                    }
+                    changeStateIfNeeded(gameState);
                 } else {
                     gameState.getGameLog().add(CANT_MOVE);
                 }
                 break;
-            case TURN_RIGHT:
-                gameState.setDirection(direction.turnRight());
-                break;
         }
 
+    }
+
+    void changeStateIfNeeded(GameState gameState) {
+        int nextMapValue = MapService.getNextMapValue(gameState);
+        if (nextMapValue == 3) {
+            gameState.setStage(ITEM);
+        } else if (nextMapValue == 2) {
+            gameState.setStage(FIGHT);
+        }
     }
 
 }

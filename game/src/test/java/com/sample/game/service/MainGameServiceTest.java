@@ -3,6 +3,8 @@ package com.sample.game.service;
 import com.sample.base.model.Direction;
 import com.sample.base.model.GameState;
 import com.sample.base.model.InputCommand;
+import com.sample.base.model.Stage;
+import com.sample.base.model.level.Level0;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -12,43 +14,50 @@ public class MainGameServiceTest {
 
     private final GameLogicService gameLogicService = new GameLogicService();
 
+    private GameState prepareGameState(){
+        GameState gameState = new GameState();
+        gameState.setStage(Stage.MAIN_GAME);
+        gameState.setLevel(new TestLevel());
+        return gameState;
+    }
+
     @Test
     public void shouldMoveNorth() {
-        GameState gameState = new GameState();
-        gameState.setPos(1, 1);
+        GameState gameState = prepareGameState();
+        gameState.setPos(gameState.getLevel().getStartingRow(), gameState.getLevel().getStartingCol());
         gameState.direction(Direction.NORTH);
         gameLogicService.processLogic(InputCommand.MOVE_AHEAD, gameState);
-        Assert.assertEquals(gameState.getCol(), 1);
-        Assert.assertEquals(gameState.getRow(), 0);
+        Assert.assertEquals(gameState.getCol(), 2);
+        Assert.assertEquals(gameState.getRow(), 1);
     }
 
     @Test
     public void shouldMoveSouth() {
-        GameState gameState = new GameState();
-        gameState.setPos(1, 1);
+        GameState gameState = prepareGameState();
+        gameState.setPos(gameState.getLevel().getStartingRow(), gameState.getLevel().getStartingCol());
         gameState.direction(Direction.SOUTH);
+        gameLogicService.processLogic(InputCommand.MOVE_AHEAD, gameState);
+        Assert.assertEquals(gameState.getCol(), 2);
+        Assert.assertEquals(gameState.getRow(), 3);
+    }
+
+    @Test
+    public void shouldMoveWest() {
+        GameState gameState = prepareGameState();
+        gameState.setPos(gameState.getLevel().getStartingRow(), gameState.getLevel().getStartingCol());
+        gameState.direction(Direction.WEST);
         gameLogicService.processLogic(InputCommand.MOVE_AHEAD, gameState);
         Assert.assertEquals(gameState.getCol(), 1);
         Assert.assertEquals(gameState.getRow(), 2);
     }
 
     @Test
-    public void shouldMoveWest() {
-        GameState gameState = new GameState();
-        gameState.setPos(1, 1);
-        gameState.direction(Direction.WEST);
-        gameLogicService.processLogic(InputCommand.MOVE_AHEAD, gameState);
-        Assert.assertEquals(gameState.getCol(), 0);
-        Assert.assertEquals(gameState.getRow(), 1);
-    }
-
-    @Test
     public void shouldMoveEast() {
-        GameState gameState = new GameState();
-        gameState.setPos(1, 1);
+        GameState gameState = prepareGameState();
+        gameState.setPos(gameState.getLevel().getStartingRow(), gameState.getLevel().getStartingCol());
         gameState.direction(Direction.EAST);
         gameLogicService.processLogic(InputCommand.MOVE_AHEAD, gameState);
-        Assert.assertEquals(gameState.getCol(), 2);
-        Assert.assertEquals(gameState.getRow(), 1);
+        Assert.assertEquals(gameState.getCol(), 3);
+        Assert.assertEquals(gameState.getRow(), 2);
     }
 }

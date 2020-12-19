@@ -2,6 +2,7 @@ package com.sample.game.service;
 
 import com.sample.base.model.GameState;
 import com.sample.base.model.InputCommand;
+import com.sample.base.model.Stage;
 import com.sample.game.service.logic.*;
 
 public class GameLogicService {
@@ -32,9 +33,9 @@ public class GameLogicService {
                 takeItemService.processLogic(inputCommand, gameState);
                 break;
             case FIGHT:
+            case ATTACKING_SKELETON:
                 fightService.processLogic(inputCommand, gameState);
                 break;
-
         }
 
     }

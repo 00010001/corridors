@@ -12,10 +12,9 @@ public class ConsoleRendererProperties {
     public static final String LEFT_RIGHT = "txt/view/leftright.txt";
     public static final String SKELETON = "txt/view/skeleton.txt";
     public static final String SWORD = "txt/view/sword.txt";
-
     public static final String WALL = "txt/view/wall.txt";
-
     public static final String GAME_SAVED = "txt/screen/game_saved.txt";
+    public static final String ATTACK_SKELETON = "txt/view/attackskeleton.txt";
 
     public static final String EMPTY_LINE = "x                                                                       x";
     public static final String BREAK_LINE = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
@@ -32,8 +31,8 @@ public class ConsoleRendererProperties {
     public static final String EXIT = "x                             (e)exit                                   x";
     public static final String HUD_STAT_EMPTY = "             x";
     public static final String HUD_STAT_MENU = "   (m)menu   x";
-    public static final String HUD_STAT_HP = "   HP: 100   x";
-    public static final String HUD_STAT_XP = "   XP: 100   x";
+    public static final String HUD_STAT_HP = "             x";
+    public static final String HUD_STAT_XP = "             x";
     public static final String HUD_STAT_BREAK_LINE = "xxxxxxxxxxxxxx";
     public static final String HUD_LOG_EMPTY = "                                         x";
     public static final String HUD_LOG_BREAK_LINE = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
