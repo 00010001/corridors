@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class GameLogicServiceTest {
+public class MainGameServiceTest {
 
     private final GameLogicService gameLogicService = new GameLogicService();
 

@@ -5,7 +5,7 @@ import java.io.Serializable;
 public enum Stage implements Serializable {
     MENU,
     CHARACTER_CREATION,
-    GAME,
+    MAIN_GAME,
     GAME_SAVED,
     ITEM,
     FIGHT

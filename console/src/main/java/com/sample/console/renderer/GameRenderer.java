@@ -3,6 +3,7 @@ package com.sample.console.renderer;
 import com.sample.base.model.Direction;
 import com.sample.base.model.GameState;
 import com.sample.base.model.hero.Hero;
+import com.sample.base.service.MapService;
 import com.sample.console.renderer.service.FileService;
 
 import java.util.List;
@@ -17,11 +18,7 @@ public class GameRenderer {
         Direction direction = gameState.getDirection();
         Hero hero = gameState.getHero();
 
-        int facingValue = getFacingMapValue(
-                gameState.getCol(),
-                gameState.getRow(),
-                gameState.getLevel().getMap(),
-                direction);
+        int facingValue = MapService.getNextMapValue(gameState);
 
         int leftFacingValue = getFacingMapValue(
                 gameState.getCol(),

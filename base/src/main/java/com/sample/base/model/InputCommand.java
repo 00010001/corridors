@@ -11,5 +11,6 @@ public enum InputCommand {
     SAVE_GAME,
     LOAD_GAME,
     EXIT,
-    MENU
+    MENU,
+    TAKE_ITEM;
 }

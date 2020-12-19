@@ -12,12 +12,27 @@ public class ConsoleInputConverter {
             return convertForMenu(gameState, userInput);
         } else if (currentStage == Stage.CHARACTER_CREATION) {
             return convertForCharacterCreation(userInput);
-        } else if (currentStage == Stage.GAME) {
+        } else if (currentStage == Stage.MAIN_GAME) {
             return convertForGame(userInput);
         } else if (currentStage == Stage.GAME_SAVED) {
             return convertForGameSaved(userInput);
+        } else if (currentStage == Stage.ITEM) {
+            return convertForItem(userInput);
+        } else if (currentStage == Stage.FIGHT) {
+            return convertForFight(userInput);
         }
         throw new RuntimeException();
+    }
+
+    private InputCommand convertForFight(String userInput) {
+        throw new IllegalArgumentException();
+    }
+
+    private InputCommand convertForItem(String userInput) {
+        if ("e".equals(userInput.toLowerCase())) {
+            return InputCommand.TAKE_ITEM;
+        }
+        throw new IllegalArgumentException();
     }
 
     private InputCommand convertForGameSaved(String userInput) {
@@ -72,8 +87,6 @@ public class ConsoleInputConverter {
                 return InputCommand.TURN_LEFT;
             case "d":
                 return InputCommand.TURN_RIGHT;
-            case "e":
-                return InputCommand.EXIT;
             case "m":
                 return InputCommand.MENU;
             default:

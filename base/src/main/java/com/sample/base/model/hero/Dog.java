@@ -1,6 +1,6 @@
 package com.sample.base.model.hero;
 
-public class Dog implements Hero {
+public class Dog extends Hero {
 
     private static final int ID = 2;
 
