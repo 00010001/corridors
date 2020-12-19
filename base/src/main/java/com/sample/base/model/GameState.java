@@ -1,17 +1,16 @@
 package com.sample.base.model;
 
-import java.io.Serializable;
-import java.time.LocalDateTime;
+import com.sample.base.model.hero.Hero;
+import com.sample.base.model.level.Level;
 
-public class GameState implements Serializable {
+public class GameState {
 
     private Stage stage;
-    private LocalDateTime localDateTime;
     private int xPos;
     private int yPos;
-    private PlayerDirection playerDirection;
-    private int heroId;
-    private int levelId;
+    private Direction direction;
+    private Hero hero;
+    private Level level;
 
     public Stage getStage() {
         return stage;
@@ -19,14 +18,6 @@ public class GameState implements Serializable {
 
     public void setStage(Stage stage) {
         this.stage = stage;
-    }
-
-    public LocalDateTime getLocalDateTime() {
-        return localDateTime;
-    }
-
-    public void setLocalDateTime(LocalDateTime localDateTime) {
-        this.localDateTime = localDateTime;
     }
 
     public int getxPos() {
@@ -45,27 +36,58 @@ public class GameState implements Serializable {
         this.yPos = yPos;
     }
 
-    public PlayerDirection getPlayerDirection() {
-        return playerDirection;
+    public Direction getPlayerDirection() {
+        return direction;
     }
 
-    public void setPlayerDirection(PlayerDirection playerDirection) {
-        this.playerDirection = playerDirection;
+    public void setPlayerDirection(Direction direction) {
+        this.direction = direction;
     }
 
-    public int getHeroId() {
-        return heroId;
+    public Hero getHero() {
+        return hero;
     }
 
-    public void setHeroId(int heroId) {
-        this.heroId = heroId;
+    public void setHero(Hero hero) {
+        this.hero = hero;
     }
 
-    public int getLevelId() {
-        return levelId;
+    public Level getLevel() {
+        return level;
     }
 
-    public void setLevelId(int levelId) {
-        this.levelId = levelId;
+    public void setLevel(Level level) {
+        this.level = level;
     }
+
+    public GameState stage(final Stage stage) {
+        this.stage = stage;
+        return this;
+    }
+
+    public GameState xPos(final int xPos) {
+        this.xPos = xPos;
+        return this;
+    }
+
+    public GameState yPos(final int yPos) {
+        this.yPos = yPos;
+        return this;
+    }
+
+    public GameState playerDirection(final Direction direction) {
+        this.direction = direction;
+        return this;
+    }
+
+    public GameState hero(final Hero hero) {
+        this.hero = hero;
+        return this;
+    }
+
+    public GameState level(final Level level) {
+        this.level = level;
+        return this;
+    }
+
 }

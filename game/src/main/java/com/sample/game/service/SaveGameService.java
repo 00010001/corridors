@@ -1,12 +1,14 @@
 package com.sample.game.service;
 
 import com.sample.base.model.GameState;
+import com.sample.base.model.SaveData;
 import com.sample.game.AppParameters;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.time.LocalDateTime;
 
 public class SaveGameService {
 
@@ -14,14 +16,26 @@ public class SaveGameService {
 
     public void saveGame(GameState gameState) {
 
+        SaveData saveData = prepareSaveData(gameState);
+
         ObjectOutputStream o;
         try (FileOutputStream f = new FileOutputStream(new File(AppParameters.SAVE_FILE))) {
             o = new ObjectOutputStream(f);
-            o.writeObject(gameState);
+            o.writeObject(saveData);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
+    }
+
+    private SaveData prepareSaveData(GameState gameState) {
+        return new SaveData()
+                .heroId(gameState.getHero().getId())
+                .levelId(gameState.getLevel().getId())
+                .localDateTime(LocalDateTime.now())
+                .playerDirection(gameState.getPlayerDirection())
+                .xPos(gameState.getxPos())
+                .yPos(gameState.getyPos());
     }
 
     public void createSaveFileIfNotExists() {

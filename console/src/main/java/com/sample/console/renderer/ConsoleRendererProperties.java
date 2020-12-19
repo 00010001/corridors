@@ -4,7 +4,9 @@ public class ConsoleRendererProperties {
 
     public static final String MENU_TOP_FILEPATH = "txt/screen/menu_top.txt";
     public static final String MENU_BOT_FILEPATH = "txt/screen/menu_bot.txt";
-    public static final String BASE_GAME = "txt/view/0.txt";
+    public static final String BASE_GAME_0 = "txt/view/0.txt";
+    public static final String BASE_GAME_1 = "txt/view/1.txt";
+
     public static final String GAME_SAVED = "txt/screen/game_saved.txt";
 
     public static final String EMPTY_LINE = "x                                                                       x";

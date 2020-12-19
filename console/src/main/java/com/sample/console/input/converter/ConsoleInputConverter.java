@@ -32,6 +32,11 @@ public class ConsoleInputConverter {
                 return InputCommand.NEW_GAME;
             case "e":
                 return InputCommand.EXIT;
+            case "l":
+                if (gameParameters.isLoadGameAvailable()) {
+                    return InputCommand.LOAD_GAME;
+                }
+                throw new IllegalArgumentException();
             case "r":
                 if (gameParameters.isPlayerStartedGame()) {
                     return InputCommand.RESUME;
@@ -63,9 +68,9 @@ public class ConsoleInputConverter {
             case "w":
                 return InputCommand.MOVE_UP;
             case "a":
-                return InputCommand.ROTATE_LEFT;
+                return InputCommand.TURN_LEFT;
             case "d":
-                return InputCommand.ROTATE_RIGHT;
+                return InputCommand.TURN_RIGHT;
             case "e":
                 return InputCommand.EXIT;
             case "m":

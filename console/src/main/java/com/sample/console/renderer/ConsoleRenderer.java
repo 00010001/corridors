@@ -17,7 +17,6 @@ public class ConsoleRenderer implements Renderer {
     private final GameRenderer gameRenderer = new GameRenderer();
     private final ConsoleService consoleService = new ConsoleService();
     private final FileService fileService = new FileService();
-    private final HeroFactory heroFactory = new HeroFactory();
 
     @Override
     public void render(GameState gameState, GameParameters gameParameters) {
@@ -25,9 +24,9 @@ public class ConsoleRenderer implements Renderer {
         if (gameState.getStage() == Stage.MENU) {
             menuRenderer.render(gameParameters);
         } else if (gameState.getStage() == Stage.CHARACTER_CREATION) {
-            characterCreationRenderer.render(heroFactory.getById(gameState.getHeroId()));
+            characterCreationRenderer.render(gameState.getHero());
         } else if (gameState.getStage() == Stage.GAME) {
-            gameRenderer.render(heroFactory.getById(gameState.getHeroId()));
+            gameRenderer.render(gameState);
         } else if (gameState.getStage() == Stage.GAME_SAVED) {
             FileService.printInputStream(fileService.getFileFromResourceAsStream(GAME_SAVED));
         }

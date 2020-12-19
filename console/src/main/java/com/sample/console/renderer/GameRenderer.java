@@ -1,6 +1,9 @@
 package com.sample.console.renderer;
 
+import com.sample.base.model.GameState;
+import com.sample.base.model.Direction;
 import com.sample.base.model.hero.Hero;
+import com.sample.base.model.level.Level;
 import com.sample.console.renderer.service.FileService;
 
 import static com.sample.console.renderer.ConsoleRendererProperties.*;
@@ -9,8 +12,20 @@ public class GameRenderer {
 
     private final FileService fileService = new FileService();
 
-    public void render(Hero hero) {
-        FileService.printInputStream(fileService.getFileFromResourceAsStream(BASE_GAME));
+    public void render(GameState gameState) {
+        Level level = gameState.getLevel();
+        Direction direction = gameState.getPlayerDirection();
+        Hero hero = gameState.getHero();
+
+        int facingXCord = gameState.getxPos() - direction.getxDiff();
+        int facingYCord = gameState.getyPos() - direction.getyDiff();
+        int facingCord = level.getMap()[facingXCord][facingYCord];
+
+        if (facingCord == 1) {
+            FileService.printInputStream(fileService.getFileFromResourceAsStream(BASE_GAME_0));
+        } else if (facingCord == 0) {
+            FileService.printInputStream(fileService.getFileFromResourceAsStream(BASE_GAME_1));
+        }
         renderHud(hero);
     }
 
