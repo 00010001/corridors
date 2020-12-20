@@ -16,12 +16,12 @@ public class PrintService {
     private final StringService stringService = new StringService();
     private final LogService logService = new LogService();
 
-    public void printFormattedLine(String string){
-        System.out.println(stringService.formatStringForConsole(string));
+    public void printFormattedLineFullWidth(String string){
+        System.out.println("x" + stringService.formatStringForConsole(string, CONSOLE_MAX_WIDTH_WITHOUT_BORDERS) + "x");
     }
 
     public void printEmptyLine() {
-        printFormattedLine("");
+        printFormattedLineFullWidth("");
     }
 
     public void printEmptyLine(int numberOfLines) {
@@ -30,13 +30,21 @@ public class PrintService {
         }
     }
 
-    public void printBreakLine() {
-        System.out.println(new String(new char[CONSOLE_MAX_WIDTH]).replace("\0", "x"));
+    public void printBreakLine(int length, boolean nextLine) {
+        if(nextLine){
+            System.out.println(generateBreakLine(length));
+        } else {
+            System.out.print(generateBreakLine(length));
+        }
+    }
+
+    private String generateBreakLine(int length){
+        return new String(new char[length]).replace("\0", "x");
     }
 
     public void printHeroFullWidth(Hero hero) {
         for (int i = 0; i < 8; i++) {
-            printFormattedLine(hero.getArray()[i]);
+            printFormattedLineFullWidth(hero.getArray()[i]);
         }
     }
 
@@ -59,15 +67,15 @@ public class PrintService {
 
     public void printHud(Hero hero, GameState gameState) {
 
-        System.out.print(hero.getArray()[0] + HUD_STAT_BREAK_LINE + HUD_LOG_BREAK_LINE
-                + " row" + gameState.getRow() + " col" + gameState.getRow() + " dir " + gameState.getDirection() + "\n");
-        System.out.print(hero.getArray()[1] + HUD_STAT_EMPTY + " " + logService.getLogEntry(gameState, 0) + "\n");
-        System.out.print(hero.getArray()[2] + HUD_STAT_HP + " " + logService.getLogEntry(gameState, 1) + "\n");
-        System.out.print(hero.getArray()[3] + HUD_STAT_XP + " " + logService.getLogEntry(gameState, 2) + "\n");
-        System.out.print(hero.getArray()[4] + HUD_STAT_EMPTY + " " + logService.getLogEntry(gameState, 3) + "\n");
-        System.out.print(hero.getArray()[5] + HUD_STAT_MENU + " " + logService.getLogEntry(gameState, 4) + "\n");
-        System.out.print(hero.getArray()[6] + HUD_STAT_EMPTY + " " + logService.getLogEntry(gameState, 5) + "\n");
-        System.out.print(hero.getArray()[7] + HUD_STAT_BREAK_LINE + HUD_LOG_BREAK_LINE + "\n");
+        System.out.println(hero.getArray()[0] + generateBreakLine(HUD_WIDTH + LOG_WIDTH)
+                + " row" + gameState.getRow() + " col" + gameState.getRow() + " dir " + gameState.getDirection());
+        System.out.println(hero.getArray()[1] + HUD_STAT_EMPTY + logService.getLogEntry(gameState, 0));
+        System.out.println(hero.getArray()[2] + HUD_STAT_HP + logService.getLogEntry(gameState, 1));
+        System.out.println(hero.getArray()[3] + stringService.formatStringForConsole(HUD_XP + gameState.getHero().getExperience(), HUD_WIDTH_WITHOUT_RIGHT_BORDER) + "x" + logService.getLogEntry(gameState, 2));
+        System.out.println(hero.getArray()[4] + HUD_STAT_EMPTY + logService.getLogEntry(gameState, 3));
+        System.out.println(hero.getArray()[5] + stringService.formatStringForConsole(HUD_MENU, HUD_WIDTH_WITHOUT_RIGHT_BORDER) + "x" + logService.getLogEntry(gameState, 4));
+        System.out.println(hero.getArray()[6] + HUD_STAT_EMPTY + logService.getLogEntry(gameState, 5));
+        System.out.println(hero.getArray()[7] + generateBreakLine(HUD_WIDTH + LOG_WIDTH));
 
     }
 

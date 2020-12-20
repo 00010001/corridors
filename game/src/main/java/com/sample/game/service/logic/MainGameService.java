@@ -3,6 +3,8 @@ package com.sample.game.service.logic;
 import com.sample.base.model.Direction;
 import com.sample.base.model.GameState;
 import com.sample.base.model.InputCommand;
+import com.sample.base.model.enemy.EnemyClass;
+import com.sample.base.model.factory.EnemyFactory;
 import com.sample.base.service.MapService;
 import com.sample.game.AppMessages;
 
@@ -10,6 +12,8 @@ import static com.sample.base.model.Stage.*;
 import static com.sample.game.AppMessages.*;
 
 public class MainGameService {
+
+    EnemyFactory enemyFactory = new EnemyFactory();
 
     public void processLogic(InputCommand inputCommand, GameState gameState) {
 
@@ -48,6 +52,7 @@ public class MainGameService {
         if (nextMapValue == 3) {
             gameState.setStage(ITEM);
         } else if (nextMapValue == 2) {
+            gameState.setLastEnemy(enemyFactory.getByEnemyClass(EnemyClass.SKELETON));
             gameState.setStage(FIGHT);
         }
     }

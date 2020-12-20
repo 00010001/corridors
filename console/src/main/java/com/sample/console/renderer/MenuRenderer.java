@@ -14,16 +14,16 @@ public class MenuRenderer {
     public void render(GameState gameState) {
         printService.printInputStream(fileService.getFileFromResourceAsStream(MENU_TOP));
         if (gameState.isPlayerStartedGame()) {
-            printService.printFormattedLine(RESUME);
+            printService.printFormattedLineFullWidth(RESUME);
         }
-        printService.printFormattedLine(NEW_GAME);
+        printService.printFormattedLineFullWidth(NEW_GAME);
         if (gameState.isPlayerStartedGame()) {
-            printService.printFormattedLine(SAVE_GAME);
+            printService.printFormattedLineFullWidth(SAVE_GAME);
         }
         if (gameState.isLoadGameAvailable()) {
-            printService.printFormattedLine(LOAD_GAME);
+            printService.printFormattedLineFullWidth(LOAD_GAME);
         }
-        printService.printFormattedLine(EXIT);
+        printService.printFormattedLineFullWidth(EXIT);
         printService.printInputStream(fileService.getFileFromResourceAsStream(MENU_BOT));
     }
 }

@@ -9,11 +9,11 @@ public class LogService {
     String getLogEntry(GameState gameState, int index) {
         List<String> gameLog = gameState.getGameLog();
         if (gameLog.isEmpty()) {
-            return "";
+            return " ";
         } else if (index >= gameLog.size()) {
-            return "";
+            return " ";
         } else {
-            return gameLog.get(gameLog.size() - index - 1);
+            return " " + gameLog.get(gameLog.size() - index - 1);
         }
     }
 

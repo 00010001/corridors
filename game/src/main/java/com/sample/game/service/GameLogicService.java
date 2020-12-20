@@ -2,7 +2,6 @@ package com.sample.game.service;
 
 import com.sample.base.model.GameState;
 import com.sample.base.model.InputCommand;
-import com.sample.base.model.Stage;
 import com.sample.game.service.logic.*;
 
 public class GameLogicService {
@@ -12,6 +11,7 @@ public class GameLogicService {
     private final MainGameService mainGameService = new MainGameService();
     private final SavedGameService savedGameService = new SavedGameService();
     private final FightService fightService = new FightService();
+    private final FightSummaryService fightSummaryService = new FightSummaryService();
     private final TakeItemService takeItemService = new TakeItemService();
 
     public void processLogic(InputCommand inputCommand, GameState gameState) {
@@ -33,8 +33,10 @@ public class GameLogicService {
                 takeItemService.processLogic(inputCommand, gameState);
                 break;
             case FIGHT:
-            case FIGHT_SUMMARY:
                 fightService.processLogic(inputCommand, gameState);
+                break;
+            case FIGHT_SUMMARY:
+                fightSummaryService.processLogic(inputCommand, gameState);
                 break;
         }
 

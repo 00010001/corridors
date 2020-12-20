@@ -3,7 +3,7 @@ package com.sample.console.renderer.service;
 import com.sample.console.renderer.ConsoleRendererProperties;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class StringServiceTest {
 
@@ -12,12 +12,14 @@ public class StringServiceTest {
     @Test
     public void formatEvenStringForConsole() {
         String even = "abcd";
-        assertEquals(ConsoleRendererProperties.CONSOLE_MAX_WIDTH, stringService.formatStringForConsole(even).length());
+        assertEquals(ConsoleRendererProperties.CONSOLE_MAX_WIDTH,
+                stringService.formatStringForConsole(even, ConsoleRendererProperties.CONSOLE_MAX_WIDTH).length());
     }
 
     @Test
     public void formatOddStringForConsole() {
         String odd = "abc";
-        assertEquals(ConsoleRendererProperties.CONSOLE_MAX_WIDTH, stringService.formatStringForConsole(odd).length());
+        assertEquals(ConsoleRendererProperties.CONSOLE_MAX_WIDTH,
+                stringService.formatStringForConsole(odd, ConsoleRendererProperties.CONSOLE_MAX_WIDTH).length());
     }
 }

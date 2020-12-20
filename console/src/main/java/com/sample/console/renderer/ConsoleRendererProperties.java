@@ -4,6 +4,13 @@ public class ConsoleRendererProperties {
 
     public static final int CONSOLE_MAX_WIDTH_WITHOUT_BORDERS = 71;
     public static final int CONSOLE_MAX_WIDTH = 73;
+    public static final int HUD_WIDTH = 15;
+    public static final int HUD_WIDTH_WITHOUT_RIGHT_BORDER = 13;
+
+    public static final int LOG_WIDTH = 42;
+
+    public static final String DIED_YOU_GAINED = " Died you gained ";
+    public static final String XP = " experience";
 
     public static final String MENU_TOP = "txt/screen/menu_top.txt";
     public static final String MENU_BOT = "txt/screen/menu_bot.txt";
@@ -27,14 +34,12 @@ public class ConsoleRendererProperties {
     public static final String SAVE_GAME = "(s)ave game";
     public static final String LOAD_GAME = "(l)oad game";
     public static final String EXIT = "(e)exit   ";
+    public static final String HUD_MENU = "(m)menu";
+    public static final String HUD_XP = "XP: ";
 
     public static final String HUD_STAT_EMPTY = "             x";
     public static final String HUD_STAT_MENU = "   (m)menu   x";
     public static final String HUD_STAT_HP = "             x";
     public static final String HUD_STAT_XP = "             x";
-    public static final String HUD_STAT_BREAK_LINE = "xxxxxxxxxxxxxx";
-    public static final String HUD_LOG_EMPTY = "                                         x";
-    public static final String HUD_LOG_BREAK_LINE = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
-
 
 }

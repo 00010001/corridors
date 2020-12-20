@@ -11,14 +11,14 @@ public class CharacterCreationRenderer {
     private final PrintService printService = new PrintService();
 
     public void render(Hero hero) {
-        printService.printBreakLine();
+        printService.printBreakLine(CONSOLE_MAX_WIDTH, true);
         printService.printEmptyLine(7);
         printService.printHeroFullWidth(hero);
         printService.printEmptyLine(3);
-        printService.printFormattedLine(NEXT);
-        printService.printFormattedLine(SELECT);
+        printService.printFormattedLineFullWidth(NEXT);
+        printService.printFormattedLineFullWidth(SELECT);
         printService.printEmptyLine(8);
-        printService.printBreakLine();
+        printService.printBreakLine(CONSOLE_MAX_WIDTH, true);
     }
 
 }

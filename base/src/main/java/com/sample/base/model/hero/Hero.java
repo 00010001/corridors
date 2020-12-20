@@ -6,7 +6,7 @@ public abstract class Hero {
     private int hp = 100;
     private boolean weapon;
     private int experience;
-    private String[] array;
+    private String[] array; //TODO fix
 
     public int getId() {
         return id;
