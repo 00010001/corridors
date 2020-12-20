@@ -22,13 +22,13 @@ public class ConsoleInputConverter {
                 return convertForItem(userInput);
             case FIGHT:
                 return convertForFight(userInput);
-            case ATTACKING_SKELETON:
-                return convertForAttacking(userInput);
+            case FIGHT_SUMMARY:
+                return convertForFightSummary(userInput);
         }
         throw new RuntimeException();
     }
 
-    private InputCommand convertForAttacking(String userInput) {
+    private InputCommand convertForFightSummary(String userInput) {
         if ("c".equals(userInput)) {
             return InputCommand.CONTINUE;
         }

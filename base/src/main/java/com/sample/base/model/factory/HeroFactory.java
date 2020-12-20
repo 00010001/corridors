@@ -17,9 +17,9 @@ public class HeroFactory {
                 return new OtherCat();
             case 4:
                 return new Owl();
+            default:
+                throw new IllegalArgumentException();
         }
-
-        return null;
     }
 
 }

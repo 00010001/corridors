@@ -33,7 +33,7 @@ public class GameLogicService {
                 takeItemService.processLogic(inputCommand, gameState);
                 break;
             case FIGHT:
-            case ATTACKING_SKELETON:
+            case FIGHT_SUMMARY:
                 fightService.processLogic(inputCommand, gameState);
                 break;
         }

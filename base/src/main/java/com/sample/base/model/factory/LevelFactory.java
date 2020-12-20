@@ -10,10 +10,8 @@ public class LevelFactory {
         switch (levelNumber) {
             case 0:
                 return new Level0();
-            case 1:
-//                return new Level1();
             default:
-                return null;
+                throw new IllegalArgumentException();
         }
 
     }

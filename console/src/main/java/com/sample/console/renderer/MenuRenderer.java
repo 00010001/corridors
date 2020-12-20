@@ -10,7 +10,7 @@ public class MenuRenderer {
     private final FileService fileService = new FileService();
 
     public void render(GameState gameState) {
-        FileService.printInputStream(fileService.getFileFromResourceAsStream(MENU_TOP_FILEPATH));
+        FileService.printInputStream(fileService.getFileFromResourceAsStream(MENU_TOP));
         if (gameState.isPlayerStartedGame()) {
             System.out.println(RESUME);
         }
@@ -22,6 +22,6 @@ public class MenuRenderer {
             System.out.println(LOAD_GAME);
         }
         System.out.println(EXIT);
-        FileService.printInputStream(fileService.getFileFromResourceAsStream(MENU_BOT_FILEPATH));
+        FileService.printInputStream(fileService.getFileFromResourceAsStream(MENU_BOT));
     }
 }

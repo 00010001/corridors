@@ -9,8 +9,7 @@ import com.sample.console.renderer.service.FileService;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.sample.console.renderer.ConsoleRendererProperties.ATTACK_SKELETON;
-import static com.sample.console.renderer.ConsoleRendererProperties.GAME_SAVED;
+import static com.sample.console.renderer.ConsoleRendererProperties.*;
 
 public class ConsoleRenderer implements Renderer {
 
@@ -21,6 +20,7 @@ public class ConsoleRenderer implements Renderer {
     private final GameRenderer gameRenderer = new GameRenderer();
     private final ConsoleService consoleService = new ConsoleService();
     private final FileService fileService = new FileService();
+    private final FightSummaryRenderer fightSummaryRenderer = new FightSummaryRenderer();
 
     @Override
     public void render(GameState gameState) {
@@ -33,8 +33,8 @@ public class ConsoleRenderer implements Renderer {
             gameRenderer.render(gameState);
         } else if (gameState.getStage() == Stage.GAME_SAVED) {
             FileService.printInputStream(fileService.getFileFromResourceAsStream(GAME_SAVED));
-        } else if (gameState.getStage() == Stage.ATTACKING_SKELETON) {
-            FileService.printInputStream(fileService.getFileFromResourceAsStream(ATTACK_SKELETON));
+        } else if (gameState.getStage() == Stage.FIGHT_SUMMARY) {
+            fightSummaryRenderer.render(gameState);
         }
     }
 }

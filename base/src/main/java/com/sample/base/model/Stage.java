@@ -9,5 +9,5 @@ public enum Stage implements Serializable {
     GAME_SAVED,
     ITEM,
     FIGHT,
-    ATTACKING_SKELETON
+    FIGHT_SUMMARY
 }

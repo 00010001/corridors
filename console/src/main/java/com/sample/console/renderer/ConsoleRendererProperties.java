@@ -2,19 +2,23 @@ package com.sample.console.renderer;
 
 public class ConsoleRendererProperties {
 
-    public static final String MENU_TOP_FILEPATH = "txt/screen/menu_top.txt";
-    public static final String MENU_BOT_FILEPATH = "txt/screen/menu_bot.txt";
+    public static final int CONSOLE_MAX_WIDTH_WITHOUT_BORDERS = 71;
+    public static final int CONSOLE_MAX_WIDTH = 73;
+
+    public static final String MENU_TOP = "txt/screen/menu_top.txt";
+    public static final String MENU_BOT = "txt/screen/menu_bot.txt";
     public static final String FRONT = "txt/view/front.txt";
     public static final String LEFT = "txt/view/left.txt";
-    public static final String FRONT_LEFT = "txt/view/frontleft.txt";
+    public static final String FRONT_LEFT = "txt/view/front_left.txt";
     public static final String RIGHT = "txt/view/right.txt";
-    public static final String FRONT_RIGHT = "txt/view/frontright.txt";
-    public static final String LEFT_RIGHT = "txt/view/leftright.txt";
+    public static final String FRONT_RIGHT = "txt/view/front_right.txt";
+    public static final String LEFT_RIGHT = "txt/view/left_right.txt";
     public static final String SKELETON = "txt/view/skeleton.txt";
     public static final String SWORD = "txt/view/sword.txt";
     public static final String WALL = "txt/view/wall.txt";
     public static final String GAME_SAVED = "txt/screen/game_saved.txt";
-    public static final String ATTACK_SKELETON = "txt/view/attackskeleton.txt";
+    public static final String FIGHT_SUMMARY_TOP = "txt/screen/fight_summary_top.txt";
+    public static final String FIGHT_SUMMARY_BOT = "txt/screen/fight_summary_bot.txt";
 
     public static final String EMPTY_LINE = "x                                                                       x";
     public static final String BREAK_LINE = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
@@ -29,6 +33,7 @@ public class ConsoleRendererProperties {
     public static final String SAVE_GAME = "x                             (s)ave game                               x";
     public static final String LOAD_GAME = "x                             (l)oad game                               x";
     public static final String EXIT = "x                             (e)exit                                   x";
+
     public static final String HUD_STAT_EMPTY = "             x";
     public static final String HUD_STAT_MENU = "   (m)menu   x";
     public static final String HUD_STAT_HP = "             x";

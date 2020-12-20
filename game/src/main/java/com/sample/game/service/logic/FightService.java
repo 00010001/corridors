@@ -10,7 +10,7 @@ import static com.sample.game.AppMessages.ENEMY_DEAD;
 public class FightService {
 
     public void processLogic(InputCommand inputCommand, GameState gameState) {
-        if (gameState.getStage() == ATTACKING_SKELETON) {
+        if (gameState.getStage() == FIGHT_SUMMARY) {
             if (inputCommand == InputCommand.CONTINUE) {
                 MapService.setNextMapValue(gameState, 1);
                 gameState.setStage(MAIN_GAME);
@@ -22,7 +22,7 @@ public class FightService {
                     gameState.setStage(MENU);
                     break;
                 case ATTACK:
-                    gameState.setStage(ATTACKING_SKELETON);
+                    gameState.setStage(FIGHT_SUMMARY);
                     break;
             }
         }
