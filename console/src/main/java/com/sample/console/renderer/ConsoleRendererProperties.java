@@ -38,8 +38,6 @@ public class ConsoleRendererProperties {
     public static final String HUD_XP = "XP: ";
 
     public static final String HUD_STAT_EMPTY = "             x";
-    public static final String HUD_STAT_MENU = "   (m)menu   x";
     public static final String HUD_STAT_HP = "             x";
-    public static final String HUD_STAT_XP = "             x";
 
 }

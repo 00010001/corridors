@@ -6,6 +6,7 @@ import com.sample.base.model.InputCommand;
 import com.sample.base.model.SaveData;
 import com.sample.base.model.factory.HeroFactory;
 import com.sample.base.model.factory.LevelFactory;
+import com.sample.base.model.hero.HeroClass;
 import com.sample.base.model.level.Level;
 import com.sample.game.service.SaveGameService;
 
@@ -25,7 +26,7 @@ public class MenuService {
             case NEW_GAME:
                 gameState.setStage(CHARACTER_CREATION);
                 gameState.setDirection(Direction.NORTH);
-                gameState.setHero(heroFactory.getById(0));
+                gameState.setHero(heroFactory.getByClass(HeroClass.findByIndex(0)));
                 Level level = levelFactory.getByNumber(FIRST_LEVEL_NUMBER);
                 gameState.setLevel(level);
                 gameState.setCol(level.getStartingCol());

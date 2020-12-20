@@ -2,6 +2,7 @@ package com.sample.game.service;
 
 import com.sample.base.model.GameState;
 import com.sample.base.model.SaveData;
+import com.sample.base.model.hero.HeroClass;
 import com.sample.game.AppParameters;
 
 import java.io.File;
@@ -30,7 +31,7 @@ public class SaveGameService {
 
     private SaveData prepareSaveData(GameState gameState) {
         return new SaveData()
-                .heroId(gameState.getHero().getId())
+                .heroIndex(gameState.getHero().getHeroClass().getIndex())
                 .levelId(gameState.getLevel().getId())
                 .localDateTime(LocalDateTime.now())
                 .direction(gameState.getDirection())

@@ -9,7 +9,7 @@ public class SaveData implements Serializable {
     private int col;
     private int row;
     private Direction direction;
-    private int heroId;
+    private int heroIndex;
     private int levelId;
 
     public LocalDateTime getLocalDateTime() {
@@ -44,12 +44,12 @@ public class SaveData implements Serializable {
         this.direction = direction;
     }
 
-    public int getHeroId() {
-        return heroId;
+    public int getHeroIndex() {
+        return heroIndex;
     }
 
-    public void setHeroId(int heroId) {
-        this.heroId = heroId;
+    public void setHeroIndex(int heroIndex) {
+        this.heroIndex = heroIndex;
     }
 
     public int getLevelId() {
@@ -80,8 +80,8 @@ public class SaveData implements Serializable {
         return this;
     }
 
-    public SaveData heroId(final int heroId) {
-        this.heroId = heroId;
+    public SaveData heroIndex(final int heroIndex) {
+        this.heroIndex = heroIndex;
         return this;
     }
 

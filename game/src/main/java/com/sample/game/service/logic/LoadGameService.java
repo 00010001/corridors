@@ -4,6 +4,7 @@ import com.sample.base.model.GameState;
 import com.sample.base.model.SaveData;
 import com.sample.base.model.factory.HeroFactory;
 import com.sample.base.model.factory.LevelFactory;
+import com.sample.base.model.hero.HeroClass;
 import com.sample.game.AppParameters;
 
 import java.io.*;
@@ -31,7 +32,7 @@ public class LoadGameService {
     public void overwriteGameState(SaveData loadedSaveData, GameState currentGameState) {
         currentGameState
                 .level(levelFactory.getByNumber(loadedSaveData.getLevelId()))
-                .hero(heroFactory.getById(loadedSaveData.getHeroId()))
+                .hero(heroFactory.getByClass(HeroClass.findByIndex(loadedSaveData.getHeroIndex())))
                 .direction(loadedSaveData.getDirection())
                 .col(loadedSaveData.getCol())
                 .row(loadedSaveData.getRow());

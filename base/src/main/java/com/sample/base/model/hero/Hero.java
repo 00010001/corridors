@@ -2,19 +2,11 @@ package com.sample.base.model.hero;
 
 public abstract class Hero {
 
-    private int id;
     private int hp = 100;
     private boolean weapon;
     private int experience;
     private String[] array; //TODO fix
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    private HeroClass heroClass;
 
     public int getHp() {
         return hp;
@@ -46,5 +38,13 @@ public abstract class Hero {
 
     public void setExperience(int experience) {
         this.experience = experience;
+    }
+
+    public HeroClass getHeroClass() {
+        return heroClass;
+    }
+
+    public void setHeroClass(HeroClass heroClass) {
+        this.heroClass = heroClass;
     }
 }

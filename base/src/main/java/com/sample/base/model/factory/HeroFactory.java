@@ -4,21 +4,21 @@ import com.sample.base.model.hero.*;
 
 public class HeroFactory {
 
-    public Hero getById(int heroId) {
+    public Hero getByClass(HeroClass heroClass) {
 
-        switch (heroId) {
-            case 0:
+        switch (heroClass) {
+            case CAT:
                 return new Cat();
-            case 1:
+            case COW:
                 return new Cow();
-            case 2:
+            case DOG:
                 return new Dog();
-            case 3:
+            case OTHER_CAT:
                 return new OtherCat();
-            case 4:
+            case OWL:
                 return new Owl();
             default:
-                throw new IllegalArgumentException();
+                throw new IllegalArgumentException("hero class not present");
         }
     }
 

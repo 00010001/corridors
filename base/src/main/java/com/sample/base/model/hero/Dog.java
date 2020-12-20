@@ -2,8 +2,6 @@ package com.sample.base.model.hero;
 
 public class Dog extends Hero {
 
-    private static final int ID = 2;
-
     private final String[] array = new String[]{
             "xxxxxxxxxxxxxxxxx",
             "x               x",
@@ -14,11 +12,6 @@ public class Dog extends Hero {
             "x               x",
             "xxxxxxxxxxxxxxxxx"
     };
-
-    @Override
-    public int getId() {
-        return ID;
-    }
 
     @Override
     public String[] getArray() {

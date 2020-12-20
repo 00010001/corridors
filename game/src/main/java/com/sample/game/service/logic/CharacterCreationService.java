@@ -3,6 +3,7 @@ package com.sample.game.service.logic;
 import com.sample.base.model.GameState;
 import com.sample.base.model.InputCommand;
 import com.sample.base.model.factory.HeroFactory;
+import com.sample.base.model.hero.HeroClass;
 
 import static com.sample.base.model.Stage.MAIN_GAME;
 
@@ -14,14 +15,14 @@ public class CharacterCreationService {
 
         switch (inputCommand) {
             case CHARACTER_NEXT:
-                int nextId;
-                int currentHeroId = gameState.getHero().getId();
+                int nextIndex;
+                int currentHeroId = gameState.getHero().getHeroClass().getIndex();
                 if (currentHeroId == 4) {
-                    nextId = 0;
+                    nextIndex = 0;
                 } else {
-                    nextId = currentHeroId + 1;
+                    nextIndex = currentHeroId + 1;
                 }
-                gameState.setHero(heroFactory.getById(nextId));
+                gameState.setHero(heroFactory.getByClass(HeroClass.findByIndex(nextIndex)));
                 break;
             case CHARACTER_SELECT:
                 gameState.setStage(MAIN_GAME);
