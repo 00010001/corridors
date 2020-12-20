@@ -1,5 +1,6 @@
 package com.sample.base.model;
 
+import com.sample.base.model.enemy.Enemy;
 import com.sample.base.model.hero.Hero;
 import com.sample.base.model.level.Level;
 
@@ -16,6 +17,7 @@ public class GameState {
     private Direction direction;
     private Hero hero;
     private Level level;
+    private Enemy lastEnemy;
     private List<String> gameLog = new ArrayList<>();
 
     public void setPos(int row, int col){
@@ -125,4 +127,11 @@ public class GameState {
         return this;
     }
 
+    public Enemy getLastEnemy() {
+        return lastEnemy;
+    }
+
+    public void setLastEnemy(Enemy lastEnemy) {
+        this.lastEnemy = lastEnemy;
+    }
 }

@@ -8,6 +8,7 @@ import com.sample.base.service.InputProcessor;
 import com.sample.base.service.Renderer;
 import com.sample.console.input.service.ConsoleInputProcessor;
 import com.sample.console.renderer.ConsoleRenderer;
+import com.sample.game.service.logic.LoadGameService;
 
 public class GameService {
 

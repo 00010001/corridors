@@ -7,7 +7,6 @@ import com.sample.base.model.SaveData;
 import com.sample.base.model.factory.HeroFactory;
 import com.sample.base.model.factory.LevelFactory;
 import com.sample.base.model.level.Level;
-import com.sample.game.service.LoadGameService;
 import com.sample.game.service.SaveGameService;
 
 import static com.sample.base.model.Stage.*;

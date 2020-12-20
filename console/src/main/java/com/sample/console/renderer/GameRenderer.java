@@ -5,6 +5,7 @@ import com.sample.base.model.GameState;
 import com.sample.base.model.hero.Hero;
 import com.sample.base.service.MapService;
 import com.sample.console.renderer.service.FileService;
+import com.sample.console.renderer.service.PrintService;
 
 import java.util.List;
 
@@ -13,6 +14,7 @@ import static com.sample.console.renderer.ConsoleRendererProperties.*;
 public class GameRenderer {
 
     private final FileService fileService = new FileService();
+    private final PrintService printService = new PrintService();
 
     public void render(GameState gameState) {
         Direction direction = gameState.getDirection();
@@ -33,9 +35,8 @@ public class GameRenderer {
                 direction.turnRight());
 
 
-        FileService.printInputStream(fileService.getFileFromResourceAsStream(getFilePathToPrint(facingValue, leftFacingValue, rightFacingValue)));
-
-        renderHud(hero, gameState);
+        printService.printInputStream(fileService.getFileFromResourceAsStream(getFilePathToPrint(facingValue, leftFacingValue, rightFacingValue)));
+        printService.printHud(hero, gameState);
     }
 
     String getFilePathToPrint(int facingValue, int leftFacingValue, int rightFacingValue) {
@@ -65,28 +66,4 @@ public class GameRenderer {
         return map[facingRow][facingCol];
     }
 
-    private void renderHud(Hero hero, GameState gameState) {
-
-        System.out.print(hero.getArray()[0] + HUD_STAT_BREAK_LINE + HUD_LOG_BREAK_LINE
-                + " row" + gameState.getRow() + " col" + gameState.getRow() + " dir " + gameState.getDirection() + "\n");
-        System.out.print(hero.getArray()[1] + HUD_STAT_EMPTY + " " + getLogEntry(gameState, 0) + "\n");
-        System.out.print(hero.getArray()[2] + HUD_STAT_HP + " " + getLogEntry(gameState, 1) + "\n");
-        System.out.print(hero.getArray()[3] + HUD_STAT_XP + " " + getLogEntry(gameState, 2) + "\n");
-        System.out.print(hero.getArray()[4] + HUD_STAT_EMPTY + " " + getLogEntry(gameState, 3) + "\n");
-        System.out.print(hero.getArray()[5] + HUD_STAT_MENU + " " + getLogEntry(gameState, 4) + "\n");
-        System.out.print(hero.getArray()[6] + HUD_STAT_EMPTY + " " + getLogEntry(gameState, 5) + "\n");
-        System.out.print(hero.getArray()[7] + HUD_STAT_BREAK_LINE + HUD_LOG_BREAK_LINE + "\n");
-
-    }
-
-    String getLogEntry(GameState gameState, int index) {
-        List<String> gameLog = gameState.getGameLog();
-        if (gameLog.isEmpty()) {
-            return "";
-        } else if (index >= gameLog.size()) {
-            return "";
-        } else {
-            return gameLog.get(gameLog.size() - index - 1);
-        }
-    }
 }

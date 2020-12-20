@@ -1,33 +1,24 @@
 package com.sample.console.renderer;
 
 import com.sample.base.model.hero.Hero;
+import com.sample.console.renderer.service.PrintService;
+import com.sample.console.renderer.service.StringService;
 
 import static com.sample.console.renderer.ConsoleRendererProperties.*;
 
 public class CharacterCreationRenderer {
 
+    private final PrintService printService = new PrintService();
+
     public void render(Hero hero) {
-        System.out.println(BREAK_LINE);
-        printEmptyLine(7);
-        printHero(hero);
-        printEmptyLine(3);
-        System.out.println(NEXT);
-        System.out.println(SELECT);
-        printEmptyLine(8);
-        System.out.println(BREAK_LINE);
+        printService.printBreakLine();
+        printService.printEmptyLine(7);
+        printService.printHeroFullWidth(hero);
+        printService.printEmptyLine(3);
+        printService.printFormattedLine(NEXT);
+        printService.printFormattedLine(SELECT);
+        printService.printEmptyLine(8);
+        printService.printBreakLine();
     }
 
-    private void printHero(Hero hero) {
-        for (int i = 0; i < 8; i++) {
-            System.out.print(CHARACTER_CREATION_LEFT);
-            System.out.print(hero.getArray()[i]);
-            System.out.print(CHARACTER_CREATION_RIGHT + "\n");
-        }
-    }
-
-    private void printEmptyLine(int numberOfLines) {
-        for (int i = 0; i < numberOfLines; i++) {
-            System.out.println(EMPTY_LINE);
-        }
-    }
 }

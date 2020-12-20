@@ -1,4 +1,4 @@
-package com.sample.game.service;
+package com.sample.game.service.logic;
 
 import com.sample.base.model.GameState;
 import com.sample.base.model.SaveData;
@@ -19,13 +19,13 @@ public class LoadGameService {
             oi = new ObjectInputStream(fi);
             return (SaveData) oi.readObject();
         } catch (FileNotFoundException e) {
-            System.out.println("File not found");
+            throw new RuntimeException("file not found: " + AppParameters.SAVE_FILE);
         } catch (IOException e) {
-            System.out.println("Error initializing stream");
+            throw new RuntimeException("error initializing stream");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        return null;
+        throw new RuntimeException("can't load save data");
     }
 
     public void overwriteGameState(SaveData loadedSaveData, GameState currentGameState) {

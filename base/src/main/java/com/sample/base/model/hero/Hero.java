@@ -5,6 +5,7 @@ public abstract class Hero {
     private int id;
     private int hp = 100;
     private boolean weapon;
+    private int experience;
     private String[] array;
 
     public int getId() {
@@ -37,5 +38,13 @@ public abstract class Hero {
 
     public void setArray(String[] array) {
         this.array = array;
+    }
+
+    public int getExperience() {
+        return experience;
+    }
+
+    public void setExperience(int experience) {
+        this.experience = experience;
     }
 }

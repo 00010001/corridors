@@ -20,19 +20,13 @@ public class ConsoleRendererProperties {
     public static final String FIGHT_SUMMARY_TOP = "txt/screen/fight_summary_top.txt";
     public static final String FIGHT_SUMMARY_BOT = "txt/screen/fight_summary_bot.txt";
 
-    public static final String EMPTY_LINE = "x                                                                       x";
-    public static final String BREAK_LINE = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
-
-    public static final String CHARACTER_CREATION_LEFT = "x                           ";
-    public static final String CHARACTER_CREATION_RIGHT = "                           x";
-
-    public static final String NEXT = "x                               (n)next                                 x";
-    public static final String SELECT = "x                               (s)elect                                x";
-    public static final String RESUME = "x                             (r)esume                                  x";
-    public static final String NEW_GAME = "x                             (n)ew game                                x";
-    public static final String SAVE_GAME = "x                             (s)ave game                               x";
-    public static final String LOAD_GAME = "x                             (l)oad game                               x";
-    public static final String EXIT = "x                             (e)exit                                   x";
+    public static final String NEXT = "(n)next ";
+    public static final String SELECT = "(s)elect";
+    public static final String RESUME = "(r)esume  ";
+    public static final String NEW_GAME = "(n)ew game";
+    public static final String SAVE_GAME = "(s)ave game";
+    public static final String LOAD_GAME = "(l)oad game";
+    public static final String EXIT = "(e)exit   ";
 
     public static final String HUD_STAT_EMPTY = "             x";
     public static final String HUD_STAT_MENU = "   (m)menu   x";

@@ -5,6 +5,7 @@ public class Enemy {
     private EnemyClass enemyClass;
     private int hp;
     private int damage;
+    private int experienceValue;
 
     public EnemyClass getEnemyClass() {
         return enemyClass;
@@ -45,5 +46,11 @@ public class Enemy {
         return this;
     }
 
+    public int getExperienceValue() {
+        return experienceValue;
+    }
 
+    public void setExperienceValue(int experienceValue) {
+        this.experienceValue = experienceValue;
+    }
 }
