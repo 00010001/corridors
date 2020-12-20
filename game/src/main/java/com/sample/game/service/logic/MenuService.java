@@ -43,6 +43,7 @@ public class MenuService {
             case LOAD_GAME:
                 SaveData saveData = loadGameService.loadSaveData();
                 loadGameService.overwriteGameState(saveData, gameState);
+                gameState.getGameLog().clear();
                 gameState.setPlayerStartedGame(true);
                 gameState.setStage(MAIN_GAME);
                 break;
