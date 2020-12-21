@@ -13,7 +13,6 @@ public class TakeItemService {
 
         if (inputCommand == InputCommand.TAKE_ITEM) {
             MapService.setNextMapValue(gameState, 1);
-            gameState.getHero().setWeapon(true);
             gameState.setStage(MAIN_GAME);
             gameState.getGameLog().add(AppMessages.TAKE_ITEM);
         }

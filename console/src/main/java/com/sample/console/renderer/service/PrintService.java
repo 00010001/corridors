@@ -2,6 +2,7 @@ package com.sample.console.renderer.service;
 
 import com.sample.base.model.GameState;
 import com.sample.base.model.hero.Hero;
+import com.sample.console.renderer.HeroArrayProperties;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -44,7 +45,7 @@ public class PrintService {
 
     public void printHeroFullWidth(Hero hero) {
         for (int i = 0; i < 8; i++) {
-            printFormattedLineFullWidth(hero.getArray()[i]);
+            printFormattedLineFullWidth(HeroArrayProperties.getByIndex(hero.getHeroClass().getIndex())[i]);
         }
     }
 
@@ -66,16 +67,16 @@ public class PrintService {
     }
 
     public void printHud(Hero hero, GameState gameState) {
-
-        System.out.println(hero.getArray()[0] + generateBreakLine(HUD_WIDTH + LOG_WIDTH)
+        String[] heroArray = HeroArrayProperties.getByIndex(hero.getHeroClass().getIndex());
+        System.out.println(heroArray[0] + generateBreakLine(HUD_WIDTH + LOG_WIDTH)
                 + " row" + gameState.getRow() + " col" + gameState.getRow() + " dir " + gameState.getDirection());
-        System.out.println(hero.getArray()[1] + HUD_STAT_EMPTY + logService.getLogEntry(gameState, 0));
-        System.out.println(hero.getArray()[2] + HUD_STAT_HP + logService.getLogEntry(gameState, 1));
-        System.out.println(hero.getArray()[3] + stringService.formatStringForConsole(HUD_XP + gameState.getHero().getExperience(), HUD_WIDTH_WITHOUT_RIGHT_BORDER) + "x" + logService.getLogEntry(gameState, 2));
-        System.out.println(hero.getArray()[4] + HUD_STAT_EMPTY + logService.getLogEntry(gameState, 3));
-        System.out.println(hero.getArray()[5] + stringService.formatStringForConsole(HUD_MENU, HUD_WIDTH_WITHOUT_RIGHT_BORDER) + "x" + logService.getLogEntry(gameState, 4));
-        System.out.println(hero.getArray()[6] + HUD_STAT_EMPTY + logService.getLogEntry(gameState, 5));
-        System.out.println(hero.getArray()[7] + generateBreakLine(HUD_WIDTH + LOG_WIDTH));
+        System.out.println(heroArray[1] + HUD_STAT_EMPTY + logService.getLogEntry(gameState, 0));
+        System.out.println(heroArray[2] + stringService.formatStringForConsole(HUD_HP + gameState.getHero().getHp(), HUD_WIDTH_WITHOUT_RIGHT_BORDER) + "x" + logService.getLogEntry(gameState, 1));
+        System.out.println(heroArray[3] + stringService.formatStringForConsole(HUD_XP + gameState.getHero().getExperience(), HUD_WIDTH_WITHOUT_RIGHT_BORDER) + "x" + logService.getLogEntry(gameState, 2));
+        System.out.println(heroArray[4] + HUD_STAT_EMPTY + logService.getLogEntry(gameState, 3));
+        System.out.println(heroArray[5] + stringService.formatStringForConsole(HUD_MENU, HUD_WIDTH_WITHOUT_RIGHT_BORDER) + "x" + logService.getLogEntry(gameState, 4));
+        System.out.println(heroArray[6] + HUD_STAT_EMPTY + logService.getLogEntry(gameState, 5));
+        System.out.println(heroArray[7] + generateBreakLine(HUD_WIDTH + LOG_WIDTH));
 
     }
 

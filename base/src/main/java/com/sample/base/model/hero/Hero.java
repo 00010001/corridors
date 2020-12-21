@@ -1,35 +1,49 @@
 package com.sample.base.model.hero;
 
-public abstract class Hero {
+import com.sample.base.model.BaseEntity;
 
-    private int hp = 100;
-    private boolean weapon;
+import java.io.Serializable;
+import java.math.BigDecimal;
+
+public class Hero implements Serializable, BaseEntity {
+
+    private int attack;
+    private int defence;
+    private BigDecimal hp;
+    private int level;
     private int experience;
-    private String[] array; //TODO fix
     private HeroClass heroClass;
 
-    public int getHp() {
+    public int getAttack() {
+        return attack;
+    }
+
+    public void setAttack(int attack) {
+        this.attack = attack;
+    }
+
+    public int getDefence() {
+        return defence;
+    }
+
+    public void setDefence(int defence) {
+        this.defence = defence;
+    }
+
+    public BigDecimal getHp() {
         return hp;
     }
 
-    public void setHp(int hp) {
+    public void setHp(BigDecimal hp) {
         this.hp = hp;
     }
 
-    public boolean isWeapon() {
-        return weapon;
+    public int getLevel() {
+        return level;
     }
 
-    public void setWeapon(boolean weapon) {
-        this.weapon = weapon;
-    }
-
-    public String[] getArray() {
-        return array;
-    }
-
-    public void setArray(String[] array) {
-        this.array = array;
+    public void setLevel(int level) {
+        this.level = level;
     }
 
     public int getExperience() {
@@ -47,4 +61,36 @@ public abstract class Hero {
     public void setHeroClass(HeroClass heroClass) {
         this.heroClass = heroClass;
     }
+
+    public Hero attack(final int attack) {
+        this.attack = attack;
+        return this;
+    }
+
+    public Hero defence(final int defence) {
+        this.defence = defence;
+        return this;
+    }
+
+    public Hero hp(final BigDecimal hp) {
+        this.hp = hp;
+        return this;
+    }
+
+    public Hero level(final int level) {
+        this.level = level;
+        return this;
+    }
+
+    public Hero experience(final int experience) {
+        this.experience = experience;
+        return this;
+    }
+
+    public Hero heroClass(final HeroClass heroClass) {
+        this.heroClass = heroClass;
+        return this;
+    }
+
+
 }

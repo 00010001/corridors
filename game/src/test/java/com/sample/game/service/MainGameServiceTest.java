@@ -4,11 +4,9 @@ import com.sample.base.model.Direction;
 import com.sample.base.model.GameState;
 import com.sample.base.model.InputCommand;
 import com.sample.base.model.Stage;
-import com.sample.base.model.level.Level0;
+import com.sample.base.model.factory.LevelFactory;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class MainGameServiceTest {
 
@@ -17,7 +15,7 @@ public class MainGameServiceTest {
     private GameState prepareGameState(){
         GameState gameState = new GameState();
         gameState.setStage(Stage.MAIN_GAME);
-        gameState.setLevel(new TestLevel());
+        gameState.setLevel(LevelFactory.getByNumber(-1));
         return gameState;
     }
 

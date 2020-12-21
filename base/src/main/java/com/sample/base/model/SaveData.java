@@ -1,5 +1,8 @@
 package com.sample.base.model;
 
+import com.sample.base.model.hero.Hero;
+import com.sample.base.model.level.Level;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -9,8 +12,8 @@ public class SaveData implements Serializable {
     private int col;
     private int row;
     private Direction direction;
-    private int heroIndex;
-    private int levelId;
+    private Hero hero;
+    private Level level;
 
     public LocalDateTime getLocalDateTime() {
         return localDateTime;
@@ -44,20 +47,20 @@ public class SaveData implements Serializable {
         this.direction = direction;
     }
 
-    public int getHeroIndex() {
-        return heroIndex;
+    public Hero getHero() {
+        return hero;
     }
 
-    public void setHeroIndex(int heroIndex) {
-        this.heroIndex = heroIndex;
+    public void setHero(Hero hero) {
+        this.hero = hero;
     }
 
-    public int getLevelId() {
-        return levelId;
+    public Level getLevel() {
+        return level;
     }
 
-    public void setLevelId(int levelId) {
-        this.levelId = levelId;
+    public void setLevel(Level level) {
+        this.level = level;
     }
 
     public SaveData localDateTime(final LocalDateTime localDateTime) {
@@ -80,15 +83,14 @@ public class SaveData implements Serializable {
         return this;
     }
 
-    public SaveData heroIndex(final int heroIndex) {
-        this.heroIndex = heroIndex;
+    public SaveData hero(final Hero hero) {
+        this.hero = hero;
         return this;
     }
 
-    public SaveData levelId(final int levelId) {
-        this.levelId = levelId;
+    public SaveData level(final Level level) {
+        this.level = level;
         return this;
     }
-
 
 }

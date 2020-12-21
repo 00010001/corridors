@@ -9,8 +9,6 @@ import static com.sample.base.model.Stage.MAIN_GAME;
 
 public class CharacterCreationService {
 
-    private final HeroFactory heroFactory = new HeroFactory();
-
     public void processLogic(InputCommand inputCommand, GameState gameState) {
 
         switch (inputCommand) {
@@ -22,7 +20,7 @@ public class CharacterCreationService {
                 } else {
                     nextIndex = currentHeroId + 1;
                 }
-                gameState.setHero(heroFactory.getByClass(HeroClass.findByIndex(nextIndex)));
+                gameState.setHero(HeroFactory.getByClass(HeroClass.findByIndex(nextIndex)));
                 break;
             case CHARACTER_SELECT:
                 gameState.setStage(MAIN_GAME);

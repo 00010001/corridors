@@ -3,7 +3,7 @@ package com.sample.game.service;
 import com.sample.base.model.GameState;
 import com.sample.base.model.InputCommand;
 import com.sample.base.model.Stage;
-import com.sample.base.model.level.Level0;
+import com.sample.base.model.factory.LevelFactory;
 import com.sample.base.service.InputProcessor;
 import com.sample.base.service.Renderer;
 import com.sample.console.input.service.ConsoleInputProcessor;
@@ -28,7 +28,7 @@ public class GameService {
             loadGameAvailable = loadGameService.isSaveFileValid();
         }
         gameState.setLoadGameAvailable(loadGameAvailable);
-        gameState.setLevel(new Level0());
+        gameState.setLevel(LevelFactory.getByNumber(0));
         gameLoop();
     }
 

@@ -13,8 +13,6 @@ import static com.sample.game.AppMessages.*;
 
 public class MainGameService {
 
-    EnemyFactory enemyFactory = new EnemyFactory();
-
     public void processLogic(InputCommand inputCommand, GameState gameState) {
 
         Direction direction = gameState.getDirection();
@@ -52,7 +50,7 @@ public class MainGameService {
         if (nextMapValue == 3) {
             gameState.setStage(ITEM);
         } else if (nextMapValue == 2) {
-            gameState.setLastEnemy(enemyFactory.getByEnemyClass(EnemyClass.SKELETON));
+            gameState.setLastEnemy(EnemyFactory.getByEnemyClass(EnemyClass.SKELETON));
             gameState.setStage(FIGHT);
         }
     }

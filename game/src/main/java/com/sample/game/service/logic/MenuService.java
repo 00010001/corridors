@@ -18,7 +18,6 @@ public class MenuService {
     private final SaveGameService saveGameService = new SaveGameService();
     private final LoadGameService loadGameService = new LoadGameService();
     private final LevelFactory levelFactory = new LevelFactory();
-    private final HeroFactory heroFactory = new HeroFactory();
 
     public void processLogic(InputCommand inputCommand, GameState gameState) {
 
@@ -26,7 +25,7 @@ public class MenuService {
             case NEW_GAME:
                 gameState.setStage(CHARACTER_CREATION);
                 gameState.setDirection(Direction.NORTH);
-                gameState.setHero(heroFactory.getByClass(HeroClass.findByIndex(0)));
+                gameState.setHero(HeroFactory.getByClass(HeroClass.findByIndex(0)));
                 Level level = levelFactory.getByNumber(FIRST_LEVEL_NUMBER);
                 gameState.setLevel(level);
                 gameState.setCol(level.getStartingCol());
@@ -41,7 +40,7 @@ public class MenuService {
                 gameState.setLoadGameAvailable(true);
                 break;
             case LOAD_GAME:
-                SaveData saveData = loadGameService.loadSaveData();
+                SaveData saveData = loadGameService.loadSaveData(false);
                 loadGameService.overwriteGameState(saveData, gameState);
                 gameState.getGameLog().clear();
                 gameState.setPlayerStartedGame(true);

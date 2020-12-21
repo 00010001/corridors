@@ -12,16 +12,21 @@ import java.io.*;
 public class LoadGameService {
 
     private final LevelFactory levelFactory = new LevelFactory();
-    private final HeroFactory heroFactory = new HeroFactory();
 
-    public SaveData loadSaveData() {
+    public SaveData loadSaveData(boolean calledForTest) {
         ObjectInputStream oi;
         try (FileInputStream fi = new FileInputStream(new File(AppParameters.SAVE_FILE))) {
             oi = new ObjectInputStream(fi);
             return (SaveData) oi.readObject();
         } catch (FileNotFoundException e) {
+            if (calledForTest) {
+                return null;
+            }
             throw new RuntimeException("file not found: " + AppParameters.SAVE_FILE);
         } catch (IOException e) {
+            if (calledForTest) {
+                return null;
+            }
             throw new RuntimeException("error initializing stream");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -31,14 +36,14 @@ public class LoadGameService {
 
     public void overwriteGameState(SaveData loadedSaveData, GameState currentGameState) {
         currentGameState
-                .level(levelFactory.getByNumber(loadedSaveData.getLevelId()))
-                .hero(heroFactory.getByClass(HeroClass.findByIndex(loadedSaveData.getHeroIndex())))
+                .level(loadedSaveData.getLevel())
+                .hero(loadedSaveData.getHero())
                 .direction(loadedSaveData.getDirection())
                 .col(loadedSaveData.getCol())
                 .row(loadedSaveData.getRow());
     }
 
     public boolean isSaveFileValid() {
-        return loadSaveData() != null;
+        return loadSaveData(true) != null;
     }
 }

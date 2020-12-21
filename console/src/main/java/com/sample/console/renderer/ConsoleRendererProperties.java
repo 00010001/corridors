@@ -36,8 +36,8 @@ public class ConsoleRendererProperties {
     public static final String EXIT = "(e)exit   ";
     public static final String HUD_MENU = "(m)menu";
     public static final String HUD_XP = "XP: ";
+    public static final String HUD_HP = "HP: ";
 
     public static final String HUD_STAT_EMPTY = "             x";
-    public static final String HUD_STAT_HP = "             x";
 
 }
