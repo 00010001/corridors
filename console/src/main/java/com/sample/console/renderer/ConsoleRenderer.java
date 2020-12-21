@@ -10,7 +10,7 @@ import com.sample.console.renderer.service.PrintService;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.sample.console.renderer.ConsoleRendererProperties.*;
+import static com.sample.console.renderer.ConsoleRendererProperties.GAME_SAVED;
 
 public class ConsoleRenderer implements Renderer {
 

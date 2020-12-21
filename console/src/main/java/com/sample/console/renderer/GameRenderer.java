@@ -7,8 +7,6 @@ import com.sample.base.service.MapService;
 import com.sample.console.renderer.service.FileService;
 import com.sample.console.renderer.service.PrintService;
 
-import java.util.List;
-
 import static com.sample.console.renderer.ConsoleRendererProperties.*;
 
 public class GameRenderer {

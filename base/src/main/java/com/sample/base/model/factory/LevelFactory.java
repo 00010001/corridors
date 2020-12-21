@@ -5,7 +5,7 @@ import com.sample.base.model.level.Level;
 
 public class LevelFactory {
 
-    public static  Level getByNumber(int levelNumber) {
+    public static Level getByNumber(int levelNumber) {
 
         switch (levelNumber) {
             case -1:

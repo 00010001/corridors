@@ -12,7 +12,7 @@ public class MainGameServiceTest {
 
     private final GameLogicService gameLogicService = new GameLogicService();
 
-    private GameState prepareGameState(){
+    private GameState prepareGameState() {
         GameState gameState = new GameState();
         gameState.setStage(Stage.MAIN_GAME);
         gameState.setLevel(LevelFactory.getByNumber(-1));

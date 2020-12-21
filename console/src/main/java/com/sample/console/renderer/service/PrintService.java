@@ -17,7 +17,7 @@ public class PrintService {
     private final StringService stringService = new StringService();
     private final LogService logService = new LogService();
 
-    public void printFormattedLineFullWidth(String string){
+    public void printFormattedLineFullWidth(String string) {
         System.out.println("x" + stringService.formatStringForConsole(string, CONSOLE_MAX_WIDTH_WITHOUT_BORDERS) + "x");
     }
 
@@ -32,14 +32,14 @@ public class PrintService {
     }
 
     public void printBreakLine(int length, boolean nextLine) {
-        if(nextLine){
+        if (nextLine) {
             System.out.println(generateBreakLine(length));
         } else {
             System.out.print(generateBreakLine(length));
         }
     }
 
-    private String generateBreakLine(int length){
+    private String generateBreakLine(int length) {
         return new String(new char[length]).replace("\0", "x");
     }
 

@@ -2,7 +2,6 @@ package com.sample.console.input.service;
 
 import com.sample.base.model.GameState;
 import com.sample.base.model.InputCommand;
-import com.sample.base.model.Stage;
 import com.sample.base.service.InputProcessor;
 import com.sample.console.input.converter.ConsoleInputConverter;
 import com.sample.console.renderer.service.PrintService;

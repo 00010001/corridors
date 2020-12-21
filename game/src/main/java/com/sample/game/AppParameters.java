@@ -1,7 +1,5 @@
 package com.sample.game;
 
-import java.math.BigDecimal;
-
 public class AppParameters {
 
     public static final String SAVE_FILE = "savedata.txt";

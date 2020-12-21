@@ -4,11 +4,9 @@ import com.sample.base.model.Direction;
 import com.sample.base.model.GameState;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class GameRendererTest {
-
-    private final GameRenderer gameRenderer = new GameRenderer();
 
     private static final int[][] MAP = {
             {0, 0, 0},
@@ -16,9 +14,10 @@ public class GameRendererTest {
             {4, 5, 2},
             {0, 3, 0}
     };
+    private final GameRenderer gameRenderer = new GameRenderer();
 
     @Test
-    public void shouldGetValidFacingValuesWhenDirectionWest(){
+    public void shouldGetValidFacingValuesWhenDirectionWest() {
         Direction direction = Direction.WEST;
         int col = 1;
         int row = 2;
@@ -32,7 +31,7 @@ public class GameRendererTest {
     }
 
     @Test
-    public void shouldGetValidFacingValuesWhenDirectionEast(){
+    public void shouldGetValidFacingValuesWhenDirectionEast() {
         Direction direction = Direction.EAST;
         int col = 1;
         int row = 2;
@@ -46,7 +45,7 @@ public class GameRendererTest {
     }
 
     @Test
-    public void shouldGetValidFacingValuesWhenDirectionSouth(){
+    public void shouldGetValidFacingValuesWhenDirectionSouth() {
         Direction direction = Direction.SOUTH;
         int col = 1;
         int row = 2;
@@ -60,7 +59,7 @@ public class GameRendererTest {
     }
 
     @Test
-    public void shouldGetValidFacingValuesWhenDirectionNorth(){
+    public void shouldGetValidFacingValuesWhenDirectionNorth() {
         Direction direction = Direction.NORTH;
         int col = 1;
         int row = 2;

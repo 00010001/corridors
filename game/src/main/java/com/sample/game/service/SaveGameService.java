@@ -2,7 +2,6 @@ package com.sample.game.service;
 
 import com.sample.base.model.GameState;
 import com.sample.base.model.SaveData;
-import com.sample.base.model.hero.HeroClass;
 import com.sample.game.AppParameters;
 
 import java.io.File;

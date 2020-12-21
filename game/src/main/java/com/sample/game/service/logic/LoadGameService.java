@@ -2,9 +2,7 @@ package com.sample.game.service.logic;
 
 import com.sample.base.model.GameState;
 import com.sample.base.model.SaveData;
-import com.sample.base.model.factory.HeroFactory;
 import com.sample.base.model.factory.LevelFactory;
-import com.sample.base.model.hero.HeroClass;
 import com.sample.game.AppParameters;
 
 import java.io.*;

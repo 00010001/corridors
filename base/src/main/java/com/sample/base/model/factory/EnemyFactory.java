@@ -7,8 +7,8 @@ import java.math.BigDecimal;
 
 public class EnemyFactory {
 
-    public static Enemy getByEnemyClass(EnemyClass enemyClass){
-        switch (enemyClass){
+    public static Enemy getByEnemyClass(EnemyClass enemyClass) {
+        switch (enemyClass) {
             case SKELETON:
                 return new Enemy()
                         .enemyClass(EnemyClass.SKELETON)

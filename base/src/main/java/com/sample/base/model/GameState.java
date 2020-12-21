@@ -20,7 +20,7 @@ public class GameState {
     private Enemy lastEnemy;
     private List<String> gameLog = new ArrayList<>();
 
-    public void setPos(int row, int col){
+    public void setPos(int row, int col) {
         this.setRow(row);
         this.setCol(col);
     }

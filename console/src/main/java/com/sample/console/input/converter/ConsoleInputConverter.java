@@ -9,7 +9,7 @@ public class ConsoleInputConverter {
     public InputCommand convert(GameState gameState, String userInput) {
         Stage currentStage = gameState.getStage();
         userInput = userInput.toLowerCase().trim();
-        switch (currentStage){
+        switch (currentStage) {
             case MENU:
                 return convertForMenu(gameState, userInput);
             case CHARACTER_CREATION:
