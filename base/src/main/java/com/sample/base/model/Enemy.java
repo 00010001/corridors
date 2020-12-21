@@ -1,18 +1,17 @@
-package com.sample.base.model.hero;
+package com.sample.base.model;
 
-import com.sample.base.model.BaseEntity;
+import com.sample.base.model.enumeration.EnemyClass;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class Hero implements Serializable, BaseEntity {
+public class Enemy implements Unit {
 
     private int attack;
     private int defence;
     private BigDecimal hp;
     private int level;
-    private int experience;
-    private HeroClass heroClass;
+    private int experienceValue;
+    private EnemyClass enemyClass;
 
     public int getAttack() {
         return attack;
@@ -46,49 +45,49 @@ public class Hero implements Serializable, BaseEntity {
         this.level = level;
     }
 
-    public int getExperience() {
-        return experience;
+    public int getExperienceValue() {
+        return experienceValue;
     }
 
-    public void setExperience(int experience) {
-        this.experience = experience;
+    public void setExperienceValue(int experienceValue) {
+        this.experienceValue = experienceValue;
     }
 
-    public HeroClass getHeroClass() {
-        return heroClass;
+    public EnemyClass getEnemyClass() {
+        return enemyClass;
     }
 
-    public void setHeroClass(HeroClass heroClass) {
-        this.heroClass = heroClass;
+    public void setEnemyClass(EnemyClass enemyClass) {
+        this.enemyClass = enemyClass;
     }
 
-    public Hero attack(final int attack) {
+    public Enemy attack(final int attack) {
         this.attack = attack;
         return this;
     }
 
-    public Hero defence(final int defence) {
+    public Enemy defence(final int defence) {
         this.defence = defence;
         return this;
     }
 
-    public Hero hp(final BigDecimal hp) {
+    public Enemy hp(final BigDecimal hp) {
         this.hp = hp;
         return this;
     }
 
-    public Hero level(final int level) {
+    public Enemy level(final int level) {
         this.level = level;
         return this;
     }
 
-    public Hero experience(final int experience) {
-        this.experience = experience;
+    public Enemy experienceValue(final int experienceValue) {
+        this.experienceValue = experienceValue;
         return this;
     }
 
-    public Hero heroClass(final HeroClass heroClass) {
-        this.heroClass = heroClass;
+    public Enemy enemyClass(final EnemyClass enemyClass) {
+        this.enemyClass = enemyClass;
         return this;
     }
 

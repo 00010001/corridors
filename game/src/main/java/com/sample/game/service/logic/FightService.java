@@ -1,16 +1,17 @@
 package com.sample.game.service.logic;
 
 import com.sample.base.model.GameState;
-import com.sample.base.model.InputCommand;
-import com.sample.base.model.enemy.Enemy;
-import com.sample.base.model.hero.Hero;
+import com.sample.base.model.Enemy;
+import com.sample.base.model.Hero;
+import com.sample.base.model.enumeration.InputCommand;
 import com.sample.base.service.MapService;
 
 import java.math.BigDecimal;
 
-import static com.sample.base.model.Stage.FIGHT_SUMMARY;
-import static com.sample.base.model.Stage.MENU;
+import static com.sample.base.model.enumeration.Stage.FIGHT_SUMMARY;
+import static com.sample.base.model.enumeration.Stage.MENU;
 import static com.sample.game.AppMessages.*;
+import static com.sample.base.ErrorMessages.INPUT_COMMAND_NOT_SUPPORTED;
 
 public class FightService {
 
@@ -36,6 +37,8 @@ public class FightService {
                     MapService.setNextMapValue(gameState, 1);
                 }
                 break;
+            default:
+                throw new IllegalArgumentException(INPUT_COMMAND_NOT_SUPPORTED);
         }
 
     }

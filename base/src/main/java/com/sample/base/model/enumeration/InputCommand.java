@@ -1,4 +1,4 @@
-package com.sample.base.model;
+package com.sample.base.model.enumeration;
 
 public enum InputCommand {
     MOVE_AHEAD,
@@ -14,5 +14,5 @@ public enum InputCommand {
     MENU,
     CONTINUE,
     ATTACK,
-    TAKE_ITEM;
+    TAKE_ITEM
 }

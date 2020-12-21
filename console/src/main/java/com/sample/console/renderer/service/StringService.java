@@ -1,10 +1,12 @@
 package com.sample.console.renderer.service;
 
+import static com.sample.base.ErrorMessages.STRING_TOO_LONG_FOR_CONSOLE;
+
 public class StringService {
 
     public String formatStringForConsole(String string, int length) {
         if (string.length() > length) {
-            throw new IllegalArgumentException("given string is too long for console window: " + string);
+            throw new IllegalArgumentException(STRING_TOO_LONG_FOR_CONSOLE + string);
         }
         int lengthOfEmptySpace = length - string.length();
         if (string.length() % 2 == 0) {

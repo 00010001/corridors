@@ -1,8 +1,7 @@
 package com.sample.base.model;
 
-import com.sample.base.model.enemy.Enemy;
-import com.sample.base.model.hero.Hero;
-import com.sample.base.model.level.Level;
+import com.sample.base.model.enumeration.Direction;
+import com.sample.base.model.enumeration.Stage;
 
 import java.util.ArrayList;
 import java.util.List;

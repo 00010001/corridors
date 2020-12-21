@@ -1,11 +1,12 @@
 package com.sample.game.service.logic;
 
 import com.sample.base.model.GameState;
-import com.sample.base.model.InputCommand;
-import com.sample.base.model.factory.HeroFactory;
-import com.sample.base.model.hero.HeroClass;
+import com.sample.base.model.enumeration.HeroClass;
+import com.sample.base.model.enumeration.InputCommand;
+import com.sample.base.factory.HeroFactory;
 
-import static com.sample.base.model.Stage.MAIN_GAME;
+import static com.sample.base.model.enumeration.Stage.MAIN_GAME;
+import static com.sample.base.ErrorMessages.INPUT_COMMAND_NOT_SUPPORTED;
 
 public class CharacterCreationService {
 
@@ -26,6 +27,8 @@ public class CharacterCreationService {
                 gameState.setStage(MAIN_GAME);
                 gameState.setPlayerStartedGame(true);
                 break;
+            default:
+                throw new IllegalArgumentException(INPUT_COMMAND_NOT_SUPPORTED);
         }
     }
 }

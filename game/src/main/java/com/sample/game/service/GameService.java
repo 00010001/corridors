@@ -1,9 +1,9 @@
 package com.sample.game.service;
 
 import com.sample.base.model.GameState;
-import com.sample.base.model.InputCommand;
-import com.sample.base.model.Stage;
-import com.sample.base.model.factory.LevelFactory;
+import com.sample.base.model.enumeration.InputCommand;
+import com.sample.base.model.enumeration.Stage;
+import com.sample.base.factory.LevelFactory;
 import com.sample.base.service.InputProcessor;
 import com.sample.base.service.Renderer;
 import com.sample.console.input.service.ConsoleInputProcessor;

@@ -1,7 +1,7 @@
 package com.sample.game.service;
 
 import com.sample.base.model.GameState;
-import com.sample.base.model.InputCommand;
+import com.sample.base.model.enumeration.InputCommand;
 import com.sample.game.service.logic.*;
 
 public class GameLogicService {

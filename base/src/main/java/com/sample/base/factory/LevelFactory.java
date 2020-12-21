@@ -1,7 +1,7 @@
-package com.sample.base.model.factory;
+package com.sample.base.factory;
 
 import com.sample.base.model.MapData;
-import com.sample.base.model.level.Level;
+import com.sample.base.model.Level;
 
 public class LevelFactory {
 

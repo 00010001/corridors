@@ -2,14 +2,13 @@ package com.sample.game.service.logic;
 
 import com.sample.base.model.GameState;
 import com.sample.base.model.SaveData;
-import com.sample.base.model.factory.LevelFactory;
 import com.sample.game.AppParameters;
 
 import java.io.*;
 
-public class LoadGameService {
+import static com.sample.base.ErrorMessages.*;
 
-    private final LevelFactory levelFactory = new LevelFactory();
+public class LoadGameService {
 
     public SaveData loadSaveData(boolean calledForTest) {
         ObjectInputStream oi;
@@ -20,16 +19,16 @@ public class LoadGameService {
             if (calledForTest) {
                 return null;
             }
-            throw new RuntimeException("file not found: " + AppParameters.SAVE_FILE);
+            throw new RuntimeException(FILE_NOT_FOUND + AppParameters.SAVE_FILE);
         } catch (IOException e) {
             if (calledForTest) {
                 return null;
             }
-            throw new RuntimeException("error initializing stream");
+            throw new RuntimeException(ERROR_INITIALIZING_STREAM);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        throw new RuntimeException("can't load save data");
+        throw new RuntimeException(CANT_LOAD_SAVE_DATA);
     }
 
     public void overwriteGameState(SaveData loadedSaveData, GameState currentGameState) {

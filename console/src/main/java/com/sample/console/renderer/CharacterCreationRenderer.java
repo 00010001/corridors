@@ -1,6 +1,6 @@
 package com.sample.console.renderer;
 
-import com.sample.base.model.hero.Hero;
+import com.sample.base.model.Hero;
 import com.sample.console.renderer.service.PrintService;
 
 import static com.sample.console.renderer.ConsoleRendererProperties.*;

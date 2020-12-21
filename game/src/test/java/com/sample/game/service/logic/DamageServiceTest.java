@@ -1,9 +1,9 @@
 package com.sample.game.service.logic;
 
-import com.sample.base.model.enemy.EnemyClass;
-import com.sample.base.model.factory.EnemyFactory;
-import com.sample.base.model.factory.HeroFactory;
-import com.sample.base.model.hero.HeroClass;
+import com.sample.base.model.enumeration.EnemyClass;
+import com.sample.base.model.enumeration.HeroClass;
+import com.sample.base.factory.EnemyFactory;
+import com.sample.base.factory.HeroFactory;
 import org.junit.Test;
 
 import java.math.BigDecimal;

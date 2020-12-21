@@ -1,4 +1,4 @@
-package com.sample.base.model.enemy;
+package com.sample.base.model.enumeration;
 
 public enum EnemyClass {
 

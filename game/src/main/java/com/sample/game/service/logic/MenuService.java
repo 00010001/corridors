@@ -1,23 +1,23 @@
 package com.sample.game.service.logic;
 
-import com.sample.base.model.Direction;
 import com.sample.base.model.GameState;
-import com.sample.base.model.InputCommand;
 import com.sample.base.model.SaveData;
-import com.sample.base.model.factory.HeroFactory;
-import com.sample.base.model.factory.LevelFactory;
-import com.sample.base.model.hero.HeroClass;
-import com.sample.base.model.level.Level;
+import com.sample.base.model.Level;
+import com.sample.base.model.enumeration.Direction;
+import com.sample.base.model.enumeration.HeroClass;
+import com.sample.base.model.enumeration.InputCommand;
+import com.sample.base.factory.HeroFactory;
+import com.sample.base.factory.LevelFactory;
 import com.sample.game.service.SaveGameService;
 
-import static com.sample.base.model.Stage.*;
+import static com.sample.base.model.enumeration.Stage.*;
 import static com.sample.game.AppParameters.FIRST_LEVEL_NUMBER;
+import static com.sample.base.ErrorMessages.INPUT_COMMAND_NOT_SUPPORTED;
 
 public class MenuService {
 
     private final SaveGameService saveGameService = new SaveGameService();
     private final LoadGameService loadGameService = new LoadGameService();
-    private final LevelFactory levelFactory = new LevelFactory();
 
     public void processLogic(InputCommand inputCommand, GameState gameState) {
 
@@ -26,7 +26,7 @@ public class MenuService {
                 gameState.setStage(CHARACTER_CREATION);
                 gameState.setDirection(Direction.NORTH);
                 gameState.setHero(HeroFactory.getByClass(HeroClass.findByIndex(0)));
-                Level level = levelFactory.getByNumber(FIRST_LEVEL_NUMBER);
+                Level level = LevelFactory.getByNumber(FIRST_LEVEL_NUMBER);
                 gameState.setLevel(level);
                 gameState.setCol(level.getStartingCol());
                 gameState.setRow(level.getStartingRow());
@@ -46,6 +46,10 @@ public class MenuService {
                 gameState.setPlayerStartedGame(true);
                 gameState.setStage(MAIN_GAME);
                 break;
+            case EXIT:
+                break;
+            default:
+                throw new IllegalArgumentException(INPUT_COMMAND_NOT_SUPPORTED);
         }
     }
 

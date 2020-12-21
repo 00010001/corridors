@@ -1,7 +1,7 @@
-package com.sample.base.model.factory;
+package com.sample.base.factory;
 
-import com.sample.base.model.hero.Hero;
-import com.sample.base.model.hero.HeroClass;
+import com.sample.base.model.Hero;
+import com.sample.base.model.enumeration.HeroClass;
 
 import java.math.BigDecimal;
 
@@ -44,7 +44,7 @@ public class HeroFactory {
                         .defence(5);
             case OWL:
                 return new Hero()
-                        .heroClass(HeroClass.OTHER_CAT)
+                        .heroClass(HeroClass.OWL)
                         .level(1)
                         .hp(BigDecimal.valueOf(99))
                         .experience(0)

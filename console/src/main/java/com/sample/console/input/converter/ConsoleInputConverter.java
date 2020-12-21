@@ -1,8 +1,10 @@
 package com.sample.console.input.converter;
 
 import com.sample.base.model.GameState;
-import com.sample.base.model.InputCommand;
-import com.sample.base.model.Stage;
+import com.sample.base.model.enumeration.InputCommand;
+import com.sample.base.model.enumeration.Stage;
+
+import static com.sample.base.ErrorMessages.*;
 
 public class ConsoleInputConverter {
 
@@ -24,15 +26,16 @@ public class ConsoleInputConverter {
                 return convertForFight(userInput);
             case FIGHT_SUMMARY:
                 return convertForFightSummary(userInput);
+            default:
+                throw new RuntimeException(STAGE_NOT_SUPPORTED);
         }
-        throw new RuntimeException();
     }
 
     private InputCommand convertForFightSummary(String userInput) {
         if ("c".equals(userInput)) {
             return InputCommand.CONTINUE;
         }
-        throw new IllegalArgumentException();
+        throw new IllegalArgumentException(USER_INPUT_IS_NOT_VALID);
     }
 
     private InputCommand convertForFight(String userInput) {
@@ -42,7 +45,7 @@ public class ConsoleInputConverter {
             case "m":
                 return InputCommand.MENU;
             default:
-                throw new IllegalArgumentException();
+                throw new IllegalArgumentException(USER_INPUT_IS_NOT_VALID);
         }
     }
 
@@ -53,7 +56,7 @@ public class ConsoleInputConverter {
             case "m":
                 return InputCommand.MENU;
             default:
-                throw new IllegalArgumentException();
+                throw new IllegalArgumentException(USER_INPUT_IS_NOT_VALID);
         }
     }
 
@@ -61,7 +64,7 @@ public class ConsoleInputConverter {
         if ("r".equals(userInput)) {
             return InputCommand.RESUME;
         }
-        throw new IllegalArgumentException();
+        throw new IllegalArgumentException(USER_INPUT_IS_NOT_VALID);
     }
 
     private InputCommand convertForMenu(GameState gameState, String userInput) {
@@ -74,19 +77,19 @@ public class ConsoleInputConverter {
                 if (gameState.isLoadGameAvailable()) {
                     return InputCommand.LOAD_GAME;
                 }
-                throw new IllegalArgumentException();
+                throw new RuntimeException(LOAD_GAME_IS_NOT_AVAILABLE);
             case "r":
                 if (gameState.isPlayerStartedGame()) {
                     return InputCommand.RESUME;
                 }
-                throw new IllegalArgumentException();
+                throw new RuntimeException();
             case "s":
                 if (gameState.isPlayerStartedGame()) {
                     return InputCommand.SAVE_GAME;
                 }
-                throw new IllegalArgumentException();
+                throw new RuntimeException(PLAYER_HAS_NOT_ENTERED_THE_GAME);
             default:
-                throw new IllegalArgumentException();
+                throw new IllegalArgumentException(USER_INPUT_IS_NOT_VALID);
         }
     }
 
@@ -97,7 +100,7 @@ public class ConsoleInputConverter {
             case "s":
                 return InputCommand.CHARACTER_SELECT;
             default:
-                throw new IllegalArgumentException();
+                throw new IllegalArgumentException(USER_INPUT_IS_NOT_VALID);
         }
     }
 
@@ -112,7 +115,7 @@ public class ConsoleInputConverter {
             case "m":
                 return InputCommand.MENU;
             default:
-                throw new IllegalArgumentException();
+                throw new IllegalArgumentException(USER_INPUT_IS_NOT_VALID);
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.sample.base.model.level;
+package com.sample.base.model;
 
 import java.io.Serializable;
 

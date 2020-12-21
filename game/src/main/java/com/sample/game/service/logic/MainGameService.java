@@ -1,15 +1,17 @@
 package com.sample.game.service.logic;
 
-import com.sample.base.model.Direction;
+import com.sample.base.model.Enemy;
 import com.sample.base.model.GameState;
-import com.sample.base.model.InputCommand;
-import com.sample.base.model.enemy.EnemyClass;
-import com.sample.base.model.factory.EnemyFactory;
+import com.sample.base.model.enumeration.Direction;
+import com.sample.base.model.enumeration.EnemyClass;
+import com.sample.base.model.enumeration.InputCommand;
+import com.sample.base.factory.EnemyFactory;
 import com.sample.base.service.MapService;
 import com.sample.game.AppMessages;
 
-import static com.sample.base.model.Stage.*;
+import static com.sample.base.model.enumeration.Stage.*;
 import static com.sample.game.AppMessages.*;
+import static com.sample.base.ErrorMessages.INPUT_COMMAND_NOT_SUPPORTED;
 
 public class MainGameService {
 
@@ -41,6 +43,8 @@ public class MainGameService {
                     gameState.getGameLog().add(CANT_MOVE);
                 }
                 break;
+            default:
+                throw new IllegalArgumentException(INPUT_COMMAND_NOT_SUPPORTED);
         }
 
     }
@@ -50,7 +54,9 @@ public class MainGameService {
         if (nextMapValue == 3) {
             gameState.setStage(ITEM);
         } else if (nextMapValue == 2) {
-            gameState.setLastEnemy(EnemyFactory.getByEnemyClass(EnemyClass.SKELETON));
+            Enemy enemy = EnemyFactory.getByEnemyClass(EnemyClass.SKELETON);
+            gameState.setLastEnemy(enemy);
+            gameState.getGameLog().add(ENCOUNTERED + enemy.getEnemyClass().name());
             gameState.setStage(FIGHT);
         }
     }

@@ -1,7 +1,7 @@
 package com.sample.console.renderer;
 
-import com.sample.base.model.Direction;
 import com.sample.base.model.GameState;
+import com.sample.base.model.enumeration.Direction;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

@@ -1,7 +1,6 @@
 package com.sample.base.model;
 
-import com.sample.base.model.hero.Hero;
-import com.sample.base.model.level.Level;
+import com.sample.base.model.enumeration.Direction;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

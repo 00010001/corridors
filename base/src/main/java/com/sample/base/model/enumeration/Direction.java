@@ -1,4 +1,4 @@
-package com.sample.base.model;
+package com.sample.base.model.enumeration;
 
 import java.io.Serializable;
 

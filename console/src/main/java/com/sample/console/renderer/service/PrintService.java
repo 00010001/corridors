@@ -1,7 +1,7 @@
 package com.sample.console.renderer.service;
 
 import com.sample.base.model.GameState;
-import com.sample.base.model.hero.Hero;
+import com.sample.base.model.Hero;
 import com.sample.console.renderer.HeroArrayProperties;
 
 import java.io.BufferedReader;
@@ -61,7 +61,7 @@ public class PrintService {
             }
 
         } catch (IOException e) {
-            throw new RuntimeException("IOException when trying to print inputStream");
+            e.printStackTrace();
         }
 
     }

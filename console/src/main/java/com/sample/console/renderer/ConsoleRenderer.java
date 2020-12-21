@@ -1,7 +1,7 @@
 package com.sample.console.renderer;
 
 import com.sample.base.model.GameState;
-import com.sample.base.model.Stage;
+import com.sample.base.model.enumeration.Stage;
 import com.sample.base.service.Renderer;
 import com.sample.console.renderer.service.ConsoleService;
 import com.sample.console.renderer.service.FileService;

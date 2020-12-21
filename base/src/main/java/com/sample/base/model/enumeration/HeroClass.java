@@ -1,4 +1,4 @@
-package com.sample.base.model.hero;
+package com.sample.base.model.enumeration;
 
 public enum HeroClass {
 

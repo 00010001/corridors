@@ -1,6 +1,6 @@
 package com.sample.game.service.logic;
 
-import com.sample.base.model.BaseEntity;
+import com.sample.base.model.Unit;
 import com.sample.game.AppParameters;
 
 import java.math.BigDecimal;
@@ -9,7 +9,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class DamageService {
 
-    public BigDecimal calculateDamage(BaseEntity first, BaseEntity second) {
+    public BigDecimal calculateDamage(Unit first, Unit second) {
         BigDecimal result;
         result = BigDecimal.valueOf(2)
                 .multiply(BigDecimal.valueOf(first.getLevel()))

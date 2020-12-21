@@ -1,13 +1,14 @@
-package com.sample.base.model.factory;
+package com.sample.base.factory;
 
-import com.sample.base.model.enemy.Enemy;
-import com.sample.base.model.enemy.EnemyClass;
+import com.sample.base.model.Enemy;
+import com.sample.base.model.enumeration.EnemyClass;
 
 import java.math.BigDecimal;
 
 public class EnemyFactory {
 
     public static Enemy getByEnemyClass(EnemyClass enemyClass) {
+
         switch (enemyClass) {
             case SKELETON:
                 return new Enemy()

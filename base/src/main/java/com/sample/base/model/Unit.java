@@ -2,7 +2,7 @@ package com.sample.base.model;
 
 import java.math.BigDecimal;
 
-public interface BaseEntity {
+public interface Unit {
 
     int getAttack();
 
