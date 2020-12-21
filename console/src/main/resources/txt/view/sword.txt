@@ -12,19 +12,19 @@ x              |   /                                 \   |              x
 x              |  /                                   \  |              x
 x              | /                                     \ |              x
 x              |/                                       \|              x
-x              |-w-w-w-w-w-w-w-w-w-w-w-w-w-w-w-w-w-w-w-w-|              x
+x              |-----------------------------------------|              x
 x             /                                           \             x
-x            a                                             d            x
-x           /                                               \           x
-x          a                                                 d          x
-x         /                     tak(e)                        \         x
-x        a                                                     d        x
+x            / Ultra greatsword symbolizing guardianship   \            x
+x           /  over the Undead Crypt. The sword has never   \           x
+x          /   seen the light of day, and is steeped in dark.\          x
+x         /                                                   \         x
+x        /                      tak(e)                         \        x
 x       /      /)                                               \       x
-x      a      //                                                 d      x
+x      /      //                                                 \      x
 x    .-------| |--------------------------------------------.__   \     x
-x    |WMWMWMW| |>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>:>  d    x
+x    |WMWMWMW| |>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>:>  \    x
 x   /`-------| |--------------------------------------------'^^     \   x
-x  a          \\                                                     d  x
+x  /          \\                                                     \  x
 x /            \)                                                     \ x
 x/                                                                     \x
 X-----------------------------------------------------------------------x

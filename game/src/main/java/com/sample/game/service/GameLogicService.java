@@ -4,6 +4,8 @@ import com.sample.base.model.GameState;
 import com.sample.base.model.enumeration.InputCommand;
 import com.sample.game.service.logic.*;
 
+import static com.sample.base.ErrorMessages.STAGE_NOT_SUPPORTED;
+
 public class GameLogicService {
 
     private final MenuService menuService = new MenuService();
@@ -13,6 +15,7 @@ public class GameLogicService {
     private final FightService fightService = new FightService();
     private final FightSummaryService fightSummaryService = new FightSummaryService();
     private final TakeItemService takeItemService = new TakeItemService();
+    private final YouDiedService youDiedService = new YouDiedService();
 
     public void processLogic(InputCommand inputCommand, GameState gameState) {
 
@@ -38,6 +41,11 @@ public class GameLogicService {
             case FIGHT_SUMMARY:
                 fightSummaryService.processLogic(inputCommand, gameState);
                 break;
+            case YOU_DIED:
+                youDiedService.processLogic(inputCommand, gameState);
+                break;
+            default:
+                throw new IllegalArgumentException(STAGE_NOT_SUPPORTED);
         }
 
     }

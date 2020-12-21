@@ -25,6 +25,7 @@ public class ConsoleInputConverter {
             case FIGHT:
                 return convertForFight(userInput);
             case FIGHT_SUMMARY:
+            case YOU_DIED:
                 return convertForFightSummary(userInput);
             default:
                 throw new RuntimeException(STAGE_NOT_SUPPORTED);
@@ -39,14 +40,10 @@ public class ConsoleInputConverter {
     }
 
     private InputCommand convertForFight(String userInput) {
-        switch (userInput) {
-            case "a":
-                return InputCommand.ATTACK;
-            case "m":
-                return InputCommand.MENU;
-            default:
-                throw new IllegalArgumentException(USER_INPUT_IS_NOT_VALID);
+        if ("a".equals(userInput)) {
+            return InputCommand.ATTACK;
         }
+        throw new IllegalArgumentException(USER_INPUT_IS_NOT_VALID);
     }
 
     private InputCommand convertForItem(String userInput) {

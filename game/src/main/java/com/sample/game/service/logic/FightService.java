@@ -1,17 +1,16 @@
 package com.sample.game.service.logic;
 
-import com.sample.base.model.GameState;
 import com.sample.base.model.Enemy;
+import com.sample.base.model.GameState;
 import com.sample.base.model.Hero;
 import com.sample.base.model.enumeration.InputCommand;
 import com.sample.base.service.MapService;
 
 import java.math.BigDecimal;
 
-import static com.sample.base.model.enumeration.Stage.FIGHT_SUMMARY;
-import static com.sample.base.model.enumeration.Stage.MENU;
-import static com.sample.game.AppMessages.*;
 import static com.sample.base.ErrorMessages.INPUT_COMMAND_NOT_SUPPORTED;
+import static com.sample.base.model.enumeration.Stage.*;
+import static com.sample.game.AppMessages.*;
 
 public class FightService {
 
@@ -32,7 +31,9 @@ public class FightService {
                 gameState.getGameLog().add(enemy.getEnemyClass().name() + CAUSED + enemyDamage + DAMAGE);
                 hero.setHp(hero.getHp().subtract(enemyDamage));
                 enemy.setHp(enemy.getHp().subtract(heroDamage));
-                if (enemy.getHp().compareTo(BigDecimal.ZERO) <= 0) {
+                if (hero.getHp().compareTo(BigDecimal.ZERO) <= 0) {
+                    gameState.setStage(YOU_DIED);
+                } else if (enemy.getHp().compareTo(BigDecimal.ZERO) <= 0) {
                     gameState.setStage(FIGHT_SUMMARY);
                     MapService.setNextMapValue(gameState, 1);
                 }

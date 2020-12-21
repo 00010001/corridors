@@ -24,6 +24,7 @@ public class ConsoleRendererProperties {
     public static final String SWORD = "txt/view/sword.txt";
     public static final String WALL = "txt/view/wall.txt";
     public static final String GAME_SAVED = "txt/screen/game_saved.txt";
+    public static final String YOU_DIED = "txt/screen/you_died.txt";
     public static final String FIGHT_SUMMARY_TOP = "txt/screen/fight_summary_top.txt";
     public static final String FIGHT_SUMMARY_BOT = "txt/screen/fight_summary_bot.txt";
 

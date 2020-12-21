@@ -6,19 +6,15 @@ x                                                                       x
 x                                                                       x
 x                                                                       x
 x                                                                       x
-x                           xxxxxxxxxxxxxxxxx                           x
-x                           x               x                           x
-x                           x     /\_/\     x                           x
-x                           x    ((@v@))    x                           x
-x             a             x    ():::()    x             d             x
-x                           x     VV-VV     x                           x
-x                           x               x                           x
-x                           xxxxxxxxxxxxxxxxx                           x
+x                                                                       x
+x                             You Died                                  x
+x                                                                       x
+x                      but you can keep your xp                         x
 x                                                                       x
 x                                                                       x
 x                                                                       x
-x                                (n)ext                                 x
-x                                (s)elect                               x
+x                                                                       x
+x                            (c)ontinue                                 x
 x                                                                       x
 x                                                                       x
 x                                                                       x
@@ -27,5 +23,9 @@ x                                                                       x
 x                                                                       x
 x                                                                       x
 x                                                                       x
-X                                                                       X
+x                                                                       x
+x                                                                       x
+x                                                                       x
+x                                                                       x
+X                                                                       x
 XXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXX

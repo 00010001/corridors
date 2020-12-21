@@ -11,6 +11,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static com.sample.console.renderer.ConsoleRendererProperties.GAME_SAVED;
+import static com.sample.console.renderer.ConsoleRendererProperties.YOU_DIED;
 
 public class ConsoleRenderer implements Renderer {
 
@@ -37,6 +38,8 @@ public class ConsoleRenderer implements Renderer {
             printService.printInputStream(fileService.getFileFromResourceAsStream(GAME_SAVED));
         } else if (gameState.getStage() == Stage.FIGHT_SUMMARY) {
             fightSummaryRenderer.render(gameState);
+        } else if (gameState.getStage() == Stage.YOU_DIED) {
+            printService.printInputStream(fileService.getFileFromResourceAsStream(YOU_DIED));
         }
     }
 }

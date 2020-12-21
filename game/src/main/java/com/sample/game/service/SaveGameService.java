@@ -32,6 +32,7 @@ public class SaveGameService {
         return new SaveData()
                 .hero(gameState.getHero())
                 .level(gameState.getLevel())
+                .stage(gameState.getStage())
                 .localDateTime(LocalDateTime.now())
                 .direction(gameState.getDirection())
                 .col(gameState.getCol())

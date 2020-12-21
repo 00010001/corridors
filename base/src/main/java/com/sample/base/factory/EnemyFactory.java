@@ -14,8 +14,8 @@ public class EnemyFactory {
                 return new Enemy()
                         .enemyClass(EnemyClass.SKELETON)
                         .hp(BigDecimal.valueOf(20))
-                        .attack(15)
-                        .defence(10)
+                        .attack(35)
+                        .defence(15)
                         .level(1)
                         .experienceValue(10);
             default:

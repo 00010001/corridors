@@ -1,6 +1,7 @@
 package com.sample.base.model;
 
 import com.sample.base.model.enumeration.Direction;
+import com.sample.base.model.enumeration.Stage;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -13,6 +14,7 @@ public class SaveData implements Serializable {
     private Direction direction;
     private Hero hero;
     private Level level;
+    private Stage stage;
 
     public LocalDateTime getLocalDateTime() {
         return localDateTime;
@@ -62,6 +64,14 @@ public class SaveData implements Serializable {
         this.level = level;
     }
 
+    public Stage getStage() {
+        return stage;
+    }
+
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
+
     public SaveData localDateTime(final LocalDateTime localDateTime) {
         this.localDateTime = localDateTime;
         return this;
@@ -91,5 +101,11 @@ public class SaveData implements Serializable {
         this.level = level;
         return this;
     }
+
+    public SaveData stage(final Stage stage) {
+        this.stage = stage;
+        return this;
+    }
+
 
 }

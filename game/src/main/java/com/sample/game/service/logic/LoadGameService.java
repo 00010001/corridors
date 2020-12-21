@@ -33,6 +33,7 @@ public class LoadGameService {
 
     public void overwriteGameState(SaveData loadedSaveData, GameState currentGameState) {
         currentGameState
+                .stage(loadedSaveData.getStage())
                 .level(loadedSaveData.getLevel())
                 .hero(loadedSaveData.getHero())
                 .direction(loadedSaveData.getDirection())
