@@ -1,6 +1,6 @@
 # Dark Corridors
 
-Dark Corridors is RPG Console game.
+Dark Corridors is POC of Java based RPG Console game.
 
 ## Usage
 
