@@ -13,7 +13,7 @@ Dark Corridors is POC of Java based RPG Console game.
 
 ## Usage
 
-After downloading your copy I suggest using command line to play this game, if you like you can also run it from IDE from main method in App.class
+After downloading your copy I suggest using command line to play this game, if you like you can also run it from IDE from main method in App class
 
 ```java
 gradlew clean build
