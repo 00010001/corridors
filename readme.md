@@ -1,6 +1,6 @@
 # Dark Corridors
 
-Dark Corridors is a CLI / Console / Terminal game.
+Dark Corridors is RPG Console game.
 
 ## Usage
 
