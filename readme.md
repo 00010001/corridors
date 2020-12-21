@@ -6,8 +6,8 @@ Dark Corridors is POC of Java based RPG Console game.
 
 * Player can move in 4 directions on map, which is int matrix
 * different values on map can represent different objects
-* games uses Stages, which is mode in which represent current gameplay state
-* game checks which value player faces and then renders appropriate view and sets up Stage
+* game uses Stages, which is mode that represent current state of the game
+* game checks which value player faces and then renders appropriate view and sets up correct Stage for situation
 * application uses GameState object to pass values to services
 * Game determines logic based on current Stage and user input
 
