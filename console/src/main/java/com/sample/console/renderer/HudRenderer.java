@@ -19,7 +19,6 @@ public class HudRenderer {
         Hero hero = gameState.getHero();
         String[] heroArray = HeroArrayProperties.getByIndex(hero.getHeroClass().getIndex());
         System.out.println(heroArray[0] + printService.generateBreakLine(HUD_WIDTH + LOG_WIDTH));
-//                + " row" + gameState.getRow() + " col" + gameState.getRow() + " dir " + gameState.getDirection());
         System.out.println(heroArray[1] + stringService.formatStringForConsole(HUD_LEVEL + hero.getLevel(), HUD_WIDTH_WITHOUT_RIGHT_BORDER) + "x" + logService.getLogEntry(gameState, 0));
         System.out.println(heroArray[2] + stringService.formatStringForConsole(HUD_HP + hero.getHp(), HUD_WIDTH_WITHOUT_RIGHT_BORDER) + "x" + logService.getLogEntry(gameState, 1));
         System.out.println(heroArray[3] + stringService.formatStringForConsole(HUD_XP + hero.getExperience(), HUD_WIDTH_WITHOUT_RIGHT_BORDER) + "x" + logService.getLogEntry(gameState, 2));

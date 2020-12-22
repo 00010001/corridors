@@ -7,7 +7,7 @@ public class ConsoleRendererProperties {
     public static final int HUD_WIDTH = 15;
     public static final int HUD_WIDTH_WITHOUT_RIGHT_BORDER = 13;
 
-    public static final int LOG_WIDTH = 42;
+    public static final int LOG_WIDTH = 41;
 
     public static final String DIED_YOU_GAINED = " Died you gained ";
     public static final String XP = " experience";

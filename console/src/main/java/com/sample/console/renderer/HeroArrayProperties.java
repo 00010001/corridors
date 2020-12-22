@@ -4,52 +4,52 @@ public class HeroArrayProperties {
 
     private static final String[] CAT_ARRAY = new String[]{
             "xxxxxxxxxxxxxxxxx",
-            "x               x",
-            "x     /\\_/\\     x",
-            "x    ( o o )    x",
-            "x    ==_Y_==    x",
-            "x      `-'      x",
-            "x               x",
+            "                 ",
+            "      /\\_/\\      ",
+            "     ( o o )     ",
+            "     ==_Y_==     ",
+            "       `-'       ",
+            "                 ",
             "xxxxxxxxxxxxxxxxx"
     };
     private static final String[] COW_ARRAY = new String[]{
             "xxxxxxxxxxxxxxxxx",
-            "x               x",
-            "x    ((...))    x",
-            "x    ( o o )    x",
-            "x     \\   /     x",
-            "x      ^_^      x",
-            "x               x",
+            "                 ",
+            "     ((...))     ",
+            "     ( o o )     ",
+            "      \\   /      ",
+            "       ^_^       ",
+            "                 ",
             "xxxxxxxxxxxxxxxxx"
     };
     private static final String[] DOG_ARRAY = new String[]{
             "xxxxxxxxxxxxxxxxx",
-            "x               x",
-            "x   ,-.___,-.   x",
-            "x   \\_/_ _\\_/   x",
-            "x     )O_O(     x",
-            "x    { (_) }    x",
-            "x               x",
+            "                 ",
+            "    ,-.___,-.    ",
+            "    \\_/_ _\\_/    ",
+            "      )O_O(      ",
+            "     { (_) }     ",
+            "                 ",
             "xxxxxxxxxxxxxxxxx"
     };
     private static final String[] OTHER_CAT_ARRAY = new String[]{
             "xxxxxxxxxxxxxxxxx",
-            "x               x",
-            "x   /\\___/\\ ((  x",
-            "x   \\`@_@'/  )) x",
-            "x   {_:Y:.}_//  x",
-            "x   {_}^-'{_}   x",
-            "x               x",
+            "                 ",
+            "    /\\___/\\ ((   ",
+            "    \\`@_@'/  ))  ",
+            "    {_:Y:.}_//   ",
+            "    {_}^-'{_}    ",
+            "                 ",
             "xxxxxxxxxxxxxxxxx"
     };
     private static final String[] OWL_ARRAY = new String[]{
             "xxxxxxxxxxxxxxxxx",
-            "x               x",
-            "x     /\\_/\\     x",
-            "x    ((@v@))    x",
-            "x    ():::()    x",
-            "x     VV-VV     x",
-            "x               x",
+            "                 ",
+            "      /\\_/\\      ",
+            "     ((@v@))     ",
+            "     ():::()     ",
+            "      VV-VV      ",
+            "                 ",
             "xxxxxxxxxxxxxxxxx"
     };
 

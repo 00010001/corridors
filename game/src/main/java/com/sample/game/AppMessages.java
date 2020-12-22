@@ -9,7 +9,7 @@ public class AppMessages {
     public final static String TURNED_RIGHT = "turned right";
     public final static String TURNED_LEFT = "turned left";
     public final static String ENEMY_DEAD = "enemy dead";
-    public final static String HERO = "hero";
+    public final static String HERO = "HERO";
     public final static String CAUSED = " caused ";
     public final static String DAMAGE = " damage";
 

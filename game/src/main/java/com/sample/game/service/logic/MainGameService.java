@@ -26,13 +26,13 @@ public class MainGameService {
                 break;
             case TURN_LEFT:
                 gameState.setDirection(direction.turnLeft());
-                changeStateIfNeeded(gameState);
                 gameState.getGameLog().add(TURNED_LEFT);
+                changeStateIfNeeded(gameState);
                 break;
             case TURN_RIGHT:
                 gameState.setDirection(direction.turnRight());
-                changeStateIfNeeded(gameState);
                 gameState.getGameLog().add(TURNED_RIGHT);
+                changeStateIfNeeded(gameState);
                 break;
             case MOVE_AHEAD:
                 if (MapService.getNextMapValue(gameState) == 1) {
