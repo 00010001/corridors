@@ -13,7 +13,7 @@ public class TakeItemService {
 
     public void processLogic(InputCommand inputCommand, GameState gameState) {
 
-        if (inputCommand == InputCommand.TAKE_ITEM) {
+        if (inputCommand == InputCommand.TAKE_ITEM || inputCommand == InputCommand.MENU) {
             gameState.setStage(MENU);
             gameState.setPlayerStartedGame(false);
         } else {

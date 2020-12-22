@@ -11,7 +11,6 @@ public class ConsoleRendererProperties {
 
     public static final String DIED_YOU_GAINED = " Died you gained ";
     public static final String XP = " experience";
-    public static final String LEVEL_UP = "You level is now ";
 
     public static final String MENU_TOP = "txt/screen/menu_top.txt";
     public static final String MENU_BOT = "txt/screen/menu_bot.txt";
