@@ -4,6 +4,10 @@ public class AppParameters {
 
     public static final String SAVE_FILE = "savedata.txt";
     public static final int FIRST_LEVEL_NUMBER = 0;
-    public static final int BASE_DAMAGE = 100;
+    public static final int BASE_DAMAGE_MIN = 85;
+    public static final int BASE_DAMAGE_MAX = 115;
+    public static final double EXPONENT = 1.2;
+    public static final double BASE_XP = 10;
+
 
 }

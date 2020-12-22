@@ -7,15 +7,15 @@ import com.sample.game.AppMessages;
 
 import static com.sample.base.model.enumeration.Stage.MAIN_GAME;
 import static com.sample.base.ErrorMessages.INPUT_COMMAND_NOT_SUPPORTED;
+import static com.sample.base.model.enumeration.Stage.MENU;
 
 public class TakeItemService {
 
     public void processLogic(InputCommand inputCommand, GameState gameState) {
 
         if (inputCommand == InputCommand.TAKE_ITEM) {
-            MapService.setNextMapValue(gameState, 1);
-            gameState.setStage(MAIN_GAME);
-            gameState.getGameLog().add(AppMessages.TAKE_ITEM);
+            gameState.setStage(MENU);
+            gameState.setPlayerStartedGame(false);
         } else {
             throw new IllegalArgumentException(INPUT_COMMAND_NOT_SUPPORTED);
         }

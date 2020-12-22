@@ -21,7 +21,7 @@ public class DamageService {
                 .divide(BigDecimal.valueOf(second.getDefence()), RoundingMode.CEILING)
                 .setScale(3, RoundingMode.CEILING);
         int baseDamage = ThreadLocalRandom.current()
-                .nextInt(AppParameters.BASE_DAMAGE - 10, AppParameters.BASE_DAMAGE + 10);
+                .nextInt(AppParameters.BASE_DAMAGE_MIN, AppParameters.BASE_DAMAGE_MAX);
         return result.multiply(attackDefence).multiply(BigDecimal.valueOf(baseDamage))
                 .setScale(1, RoundingMode.HALF_UP);
     }

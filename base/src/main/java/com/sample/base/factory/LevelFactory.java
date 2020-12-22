@@ -5,6 +5,8 @@ import com.sample.base.model.MapData;
 
 import java.util.Arrays;
 
+import static com.sample.base.ErrorMessages.LEVEL_NUMBER_NOT_PRESENT;
+
 public class LevelFactory {
 
     public static Level getByNumber(int levelNumber) {
@@ -23,7 +25,7 @@ public class LevelFactory {
                         .startingCol(1)
                         .map(cloneMapMatrix(MapData.MAP_0));
             default:
-                throw new IllegalArgumentException("level number not present");
+                throw new IllegalArgumentException(LEVEL_NUMBER_NOT_PRESENT);
         }
 
     }

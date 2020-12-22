@@ -3,6 +3,8 @@ package com.sample.base.factory;
 import com.sample.base.model.Hero;
 import com.sample.base.model.enumeration.HeroClass;
 
+import java.math.BigDecimal;
+
 import static com.sample.base.BaseProperties.HERO_STARTING_HP;
 
 public class HeroFactory {
@@ -22,7 +24,7 @@ public class HeroFactory {
                 return new Hero()
                         .heroClass(HeroClass.COW)
                         .level(1)
-                        .hp(HERO_STARTING_HP)
+                        .hp(HERO_STARTING_HP.add(BigDecimal.valueOf(20)))
                         .experience(0)
                         .attack(10)
                         .defence(40);
@@ -48,8 +50,8 @@ public class HeroFactory {
                         .level(1)
                         .hp(HERO_STARTING_HP)
                         .experience(0)
-                        .attack(50)
-                        .defence(1);
+                        .attack(70)
+                        .defence(5);
             default:
                 throw new IllegalArgumentException("hero class not present");
         }

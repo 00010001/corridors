@@ -6,7 +6,7 @@ import java.util.List;
 
 public class LogService {
 
-    String getLogEntry(GameState gameState, int index) {
+    public String getLogEntry(GameState gameState, int index) {
         List<String> gameLog = gameState.getGameLog();
         if (gameLog.isEmpty()) {
             return " ";

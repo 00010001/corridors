@@ -11,6 +11,7 @@ public class ConsoleRendererProperties {
 
     public static final String DIED_YOU_GAINED = " Died you gained ";
     public static final String XP = " experience";
+    public static final String LEVEL_UP = "You level is now ";
 
     public static final String MENU_TOP = "txt/screen/menu_top.txt";
     public static final String MENU_BOT = "txt/screen/menu_bot.txt";
@@ -24,7 +25,7 @@ public class ConsoleRendererProperties {
     public static final String SWORD = "txt/view/sword.txt";
     public static final String WALL = "txt/view/wall.txt";
     public static final String GAME_SAVED = "txt/screen/game_saved.txt";
-    public static final String YOU_DIED = "txt/screen/you_died.txt";
+    public static final String YOU_DIED = "txt/view/you_died.txt";
     public static final String FIGHT_SUMMARY_TOP = "txt/screen/fight_summary_top.txt";
     public static final String FIGHT_SUMMARY_BOT = "txt/screen/fight_summary_bot.txt";
 
@@ -38,6 +39,7 @@ public class ConsoleRendererProperties {
     public static final String HUD_MENU = "(m)menu";
     public static final String HUD_XP = "XP: ";
     public static final String HUD_HP = "HP: ";
+    public static final String HUD_LEVEL = "LVL: ";
 
     public static final String HUD_STAT_EMPTY = "             x";
 

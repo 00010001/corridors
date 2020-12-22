@@ -13,10 +13,10 @@ public class GameRenderer {
 
     private final FileService fileService = new FileService();
     private final PrintService printService = new PrintService();
+    private final HudRenderer hudRenderer = new HudRenderer();
 
     public void render(GameState gameState) {
         Direction direction = gameState.getDirection();
-        Hero hero = gameState.getHero();
 
         int facingValue = MapService.getNextMapValue(gameState);
 
@@ -34,7 +34,7 @@ public class GameRenderer {
 
 
         printService.printInputStream(fileService.getFileFromResourceAsStream(getFilePathToPrint(facingValue, leftFacingValue, rightFacingValue)));
-        printService.printHud(hero, gameState);
+        hudRenderer.renderHud(gameState);
     }
 
     String getFilePathToPrint(int facingValue, int leftFacingValue, int rightFacingValue) {
@@ -48,7 +48,7 @@ public class GameRenderer {
             return FRONT_LEFT;
         } else if (facingValue == 1 && leftFacingValue == 0 && (rightFacingValue == 1 || rightFacingValue == 2)) {
             return FRONT_RIGHT;
-        } else if (facingValue == 0 && leftFacingValue == 1 && rightFacingValue == 0) {
+        } else if (facingValue == 0 && (leftFacingValue == 1 || leftFacingValue == 2) && rightFacingValue == 0) {
             return LEFT;
         } else if (facingValue == 0 && leftFacingValue == 0 && rightFacingValue == 1) {
             return RIGHT;

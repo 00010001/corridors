@@ -10,4 +10,5 @@ public class ErrorMessages {
     public static final String LOAD_GAME_IS_NOT_AVAILABLE = "load game is not available";
     public static final String PLAYER_HAS_NOT_ENTERED_THE_GAME = "player hasn't entered the game";
     public static final String STRING_TOO_LONG_FOR_CONSOLE = "string is too long for console window: ";
+    public static final String LEVEL_NUMBER_NOT_PRESENT = "level number not present";
 }
