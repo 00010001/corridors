@@ -11,4 +11,8 @@ public class ErrorMessages {
     public static final String PLAYER_HAS_NOT_ENTERED_THE_GAME = "player hasn't entered the game";
     public static final String STRING_TOO_LONG_FOR_CONSOLE = "string is too long for console window: ";
     public static final String LEVEL_NUMBER_NOT_PRESENT = "level number not present";
+    public static final String HERO_CLASS_NOT_PRESENT = "hero class not present";
+    public static final String ENEMY_CLASS_NOT_PRESENT = "enemy class not present";
+
+
 }

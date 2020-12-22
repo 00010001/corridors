@@ -8,10 +8,10 @@ import java.math.RoundingMode;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class DamageService {
-
+    //https://www.davideaversa.it/blog/how-to-design-a-pokemon-like-combat-system-chapter-1/
     public BigDecimal calculateDamage(Unit first, Unit second) {
         BigDecimal result;
-        result = BigDecimal.valueOf(2)
+        result = BigDecimal.valueOf(3)
                 .multiply(BigDecimal.valueOf(first.getLevel()))
                 .setScale(3, RoundingMode.CEILING);
         result = result.add(BigDecimal.TEN);
