@@ -21,7 +21,7 @@ public class LevelFactory {
             case 0:
                 return new Level()
                         .id(0)
-                        .startingRow(5)
+                        .startingRow(10)
                         .startingCol(2)
                         .map(cloneMapMatrix(MapData.MAP_0));
             default:

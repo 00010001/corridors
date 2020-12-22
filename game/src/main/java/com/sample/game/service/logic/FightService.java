@@ -26,7 +26,12 @@ public class FightService {
                 Hero hero = gameState.getHero();
                 Enemy enemy = gameState.getLastEnemy();
                 BigDecimal heroDamage = damageService.calculateDamage(hero, enemy);
-                BigDecimal enemyDamage = damageService.calculateDamage(hero, enemy);
+                BigDecimal enemyDamage = damageService.calculateDamage(enemy, hero);
+                if (gameState.getHero().getLevel() >= 6 && isCriticalDamage()) {
+                    enemyDamage = enemyDamage.multiply(BigDecimal.valueOf(4));
+                } else if (gameState.getHero().getLevel() >= 3 && isCriticalDamage()) {
+                    enemyDamage = enemyDamage.multiply(BigDecimal.valueOf(2));
+                }
                 gameState.getGameLog().add(HERO + CAUSED + heroDamage + DAMAGE);
                 gameState.getGameLog().add(enemy.getEnemyClass().name() + CAUSED + enemyDamage + DAMAGE);
                 hero.setHp(hero.getHp().subtract(enemyDamage));
@@ -42,5 +47,10 @@ public class FightService {
                 throw new IllegalArgumentException(INPUT_COMMAND_NOT_SUPPORTED);
         }
 
+    }
+
+    private boolean isCriticalDamage() {
+        int random_int = (int) (Math.random() * (10 - 1 + 1) + 1);
+        return random_int <= 2;
     }
 }

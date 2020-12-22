@@ -23,6 +23,9 @@ public class ConsoleRendererProperties {
     public static final String LEFT_RIGHT = "txt/view/left_right.txt";
     public static final String FRONT_LEFT_RIGHT = "txt/view/front_left_right.txt";
     public static final String SKELETON = "txt/view/skeleton.txt";
+    public static final String SKELETON_2 = "txt/view/skeleton2.txt";
+    public static final String SKELETON_3 = "txt/view/skeleton3.txt";
+
     public static final String SWORD = "txt/view/sword.txt";
     public static final String WALL = "txt/view/wall.txt";
     public static final String GAME_SAVED = "txt/screen/game_saved.txt";

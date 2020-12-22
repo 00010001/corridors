@@ -23,7 +23,7 @@ public class Hero implements Serializable, Unit {
     }
 
     public int getDefence() {
-        return defence;
+        return defence + (3 * level);
     }
 
     public void setDefence(int defence) {

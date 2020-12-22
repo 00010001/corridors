@@ -19,21 +19,21 @@ public class HeroFactory {
                         .level(1)
                         .hp(HERO_STARTING_HP)
                         .experience(0)
-                        .attack(25)
-                        .defence(25);
+                        .attack(20)
+                        .defence(30);
             case COW:
                 return new Hero()
                         .heroClass(HeroClass.COW)
                         .level(1)
                         .hp(HERO_STARTING_HP.add(BigDecimal.valueOf(20)))
                         .experience(0)
-                        .attack(15)
+                        .attack(5)
                         .defence(40);
             case DOG:
                 return new Hero()
                         .heroClass(HeroClass.DOG)
                         .level(1)
-                        .hp(HERO_STARTING_HP.add(BigDecimal.valueOf(10)))
+                        .hp(HERO_STARTING_HP.add(BigDecimal.valueOf(15)))
                         .experience(0)
                         .attack(15)
                         .defence(25);
@@ -41,18 +41,18 @@ public class HeroFactory {
                 return new Hero()
                         .heroClass(HeroClass.OTHER_CAT)
                         .level(1)
-                        .hp(HERO_STARTING_HP.subtract(BigDecimal.valueOf(30)))
+                        .hp(HERO_STARTING_HP.subtract(BigDecimal.valueOf(20)))
                         .experience(0)
                         .attack(35)
-                        .defence(3);
+                        .defence(10);
             case OWL:
                 return new Hero()
                         .heroClass(HeroClass.OWL)
                         .level(1)
-                        .hp(HERO_STARTING_HP.subtract(BigDecimal.valueOf(20)))
+                        .hp(HERO_STARTING_HP.subtract(BigDecimal.valueOf(10)))
                         .experience(0)
-                        .attack(100)
-                        .defence(30);
+                        .attack(50)
+                        .defence(5);
             default:
                 throw new IllegalArgumentException(HERO_CLASS_NOT_PRESENT);
         }

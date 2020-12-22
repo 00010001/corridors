@@ -9,6 +9,7 @@ import com.sample.base.factory.EnemyFactory;
 import com.sample.base.service.MapService;
 import com.sample.game.AppMessages;
 
+import static com.sample.base.ErrorMessages.ARRAY_INDEX_OUT_OF_BOUND;
 import static com.sample.base.model.enumeration.Stage.*;
 import static com.sample.game.AppMessages.*;
 import static com.sample.base.ErrorMessages.INPUT_COMMAND_NOT_SUPPORTED;
@@ -50,7 +51,12 @@ public class MainGameService {
     }
 
     void changeStateIfNeeded(GameState gameState) {
-        int nextMapValue = MapService.getNextMapValue(gameState);
+        int nextMapValue = 0;
+        try {
+            nextMapValue = MapService.getNextMapValue(gameState);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            throw new ArrayIndexOutOfBoundsException(ARRAY_INDEX_OUT_OF_BOUND + gameState.getRow() + ", col " + gameState.getCol());
+        }
         if (nextMapValue == 3) {
             gameState.setStage(ITEM);
         } else if (nextMapValue == 2) {

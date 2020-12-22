@@ -9,6 +9,7 @@ import com.sample.console.renderer.service.PrintService;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -22,6 +23,7 @@ public class GameRenderer {
     private final HudRenderer hudRenderer = new HudRenderer();
 
     private static final List<Integer> NON_WALL_VALUES = Arrays.asList(1, 2, 3);
+    private static final List<String> SKELETON_FILEPATH_LIST = Arrays.asList(SKELETON, SKELETON_2, SKELETON_3);
 
     private static final Map<String, String> FACING_VALUE_FILE_PATH_MAP = Stream.of(new String[][]{
             {"100", FRONT},
@@ -51,7 +53,7 @@ public class GameRenderer {
                 gameState.getLevel().getMap(),
                 direction.turnRight());
 
-        String filePathToPrint = getFilePathToPrint(facingValue, leftFacingValue, rightFacingValue);
+        String filePathToPrint = getFilePathToPrint(facingValue, leftFacingValue, rightFacingValue, gameState);
         if(filePathToPrint == null){
             throw new NullPointerException(FILEPATH_IS_NULL + facingValue + leftFacingValue + rightFacingValue);
         }
@@ -60,10 +62,10 @@ public class GameRenderer {
         hudRenderer.renderHud(gameState);
     }
 
-    String getFilePathToPrint(int facingValue, int leftFacingValue, int rightFacingValue) {
+    String getFilePathToPrint(int facingValue, int leftFacingValue, int rightFacingValue, GameState gameState) {
         switch (facingValue) {
             case 2:
-                return SKELETON;
+                return getSkeletonFilePath(gameState);
             case 3:
                 return SWORD;
             default:
@@ -71,6 +73,17 @@ public class GameRenderer {
                         isFacingValueNonWall(leftFacingValue) +
                         isFacingValueNonWall(rightFacingValue);
                 return FACING_VALUE_FILE_PATH_MAP.get(s);
+        }
+    }
+
+    private String getSkeletonFilePath(GameState gameState) {
+        int heroLevel = gameState.getHero().getLevel();
+        if(heroLevel >= 5){
+            return SKELETON_FILEPATH_LIST.get(1);
+        } else if(heroLevel >= 3){
+            return SKELETON_FILEPATH_LIST.get(2);
+        } else {
+            return SKELETON_FILEPATH_LIST.get(0);
         }
     }
 
