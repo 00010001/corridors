@@ -13,6 +13,7 @@ public class ErrorMessages {
     public static final String LEVEL_NUMBER_NOT_PRESENT = "level number not present";
     public static final String HERO_CLASS_NOT_PRESENT = "hero class not present";
     public static final String ENEMY_CLASS_NOT_PRESENT = "enemy class not present";
+    public static final String FILEPATH_IS_NULL = "filepath is null when facing values: ";
 
 
 }

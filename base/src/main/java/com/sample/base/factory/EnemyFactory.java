@@ -19,7 +19,7 @@ public class EnemyFactory {
                         .attack(30)
                         .defence(10)
                         .level(1)
-                        .experienceValue(10);
+                        .experienceValue(15);
             default:
                 throw new IllegalArgumentException(ENEMY_CLASS_NOT_PRESENT);
         }

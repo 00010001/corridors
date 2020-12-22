@@ -41,10 +41,10 @@ public class HeroFactory {
                 return new Hero()
                         .heroClass(HeroClass.OTHER_CAT)
                         .level(1)
-                        .hp(HERO_STARTING_HP.subtract(BigDecimal.valueOf(10)))
+                        .hp(HERO_STARTING_HP.subtract(BigDecimal.valueOf(30)))
                         .experience(0)
                         .attack(35)
-                        .defence(5);
+                        .defence(3);
             case OWL:
                 return new Hero()
                         .heroClass(HeroClass.OWL)
@@ -52,7 +52,7 @@ public class HeroFactory {
                         .hp(HERO_STARTING_HP.subtract(BigDecimal.valueOf(20)))
                         .experience(0)
                         .attack(100)
-                        .defence(10);
+                        .defence(30);
             default:
                 throw new IllegalArgumentException(HERO_CLASS_NOT_PRESENT);
         }

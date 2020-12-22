@@ -10,6 +10,7 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 
 import static com.sample.console.renderer.ConsoleRendererProperties.CONSOLE_MAX_WIDTH_WITHOUT_BORDERS;
+import static com.sample.console.renderer.ConsoleRendererProperties.SKELETON;
 
 public class PrintService {
 

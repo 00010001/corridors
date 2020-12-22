@@ -22,7 +22,7 @@ public class LevelFactory {
                 return new Level()
                         .id(0)
                         .startingRow(5)
-                        .startingCol(1)
+                        .startingCol(2)
                         .map(cloneMapMatrix(MapData.MAP_0));
             default:
                 throw new IllegalArgumentException(LEVEL_NUMBER_NOT_PRESENT);

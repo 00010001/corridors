@@ -1,12 +1,18 @@
 package com.sample.console.renderer;
 
 import com.sample.base.model.GameState;
-import com.sample.base.model.Hero;
 import com.sample.base.model.enumeration.Direction;
 import com.sample.base.service.MapService;
 import com.sample.console.renderer.service.FileService;
 import com.sample.console.renderer.service.PrintService;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import static com.sample.base.ErrorMessages.FILEPATH_IS_NULL;
 import static com.sample.console.renderer.ConsoleRendererProperties.*;
 
 public class GameRenderer {
@@ -14,6 +20,19 @@ public class GameRenderer {
     private final FileService fileService = new FileService();
     private final PrintService printService = new PrintService();
     private final HudRenderer hudRenderer = new HudRenderer();
+
+    private static final List<Integer> NON_WALL_VALUES = Arrays.asList(1, 2, 3);
+
+    private static final Map<String, String> FACING_VALUE_FILE_PATH_MAP = Stream.of(new String[][]{
+            {"100", FRONT},
+            {"110", FRONT_LEFT},
+            {"101", FRONT_RIGHT},
+            {"010", LEFT},
+            {"001", RIGHT},
+            {"011", LEFT_RIGHT},
+            {"111", FRONT_LEFT_RIGHT},
+            {"000", WALL}
+    }).collect(Collectors.toMap(data -> data[0], data -> data[1]));
 
     public void render(GameState gameState) {
         Direction direction = gameState.getDirection();
@@ -32,30 +51,35 @@ public class GameRenderer {
                 gameState.getLevel().getMap(),
                 direction.turnRight());
 
-
-        printService.printInputStream(fileService.getFileFromResourceAsStream(getFilePathToPrint(facingValue, leftFacingValue, rightFacingValue)));
+        String filePathToPrint = getFilePathToPrint(facingValue, leftFacingValue, rightFacingValue);
+        if(filePathToPrint == null){
+            throw new NullPointerException(FILEPATH_IS_NULL + facingValue + leftFacingValue + rightFacingValue);
+        }
+        printService.printInputStream(fileService
+                .getFileFromResourceAsStream(filePathToPrint));
         hudRenderer.renderHud(gameState);
     }
 
     String getFilePathToPrint(int facingValue, int leftFacingValue, int rightFacingValue) {
-        if (facingValue == 2) {
-            return SKELETON;
-        } else if (facingValue == 3) {
-            return SWORD;
-        } else if (facingValue == 1 && leftFacingValue == 0 && rightFacingValue == 0) {
-            return FRONT;
-        } else if (facingValue == 1 && leftFacingValue == 1 && rightFacingValue == 0) {
-            return FRONT_LEFT;
-        } else if (facingValue == 1 && leftFacingValue == 0 && (rightFacingValue == 1 || rightFacingValue == 2)) {
-            return FRONT_RIGHT;
-        } else if (facingValue == 0 && (leftFacingValue == 1 || leftFacingValue == 2) && rightFacingValue == 0) {
-            return LEFT;
-        } else if (facingValue == 0 && leftFacingValue == 0 && rightFacingValue == 1) {
-            return RIGHT;
-        } else if (facingValue == 0 && leftFacingValue == 1 && rightFacingValue == 1) {
-            return LEFT_RIGHT;
+        switch (facingValue) {
+            case 2:
+                return SKELETON;
+            case 3:
+                return SWORD;
+            default:
+                String s = isFacingValueNonWall(facingValue) +
+                        isFacingValueNonWall(leftFacingValue) +
+                        isFacingValueNonWall(rightFacingValue);
+                return FACING_VALUE_FILE_PATH_MAP.get(s);
         }
-        return WALL;
+    }
+
+    private String isFacingValueNonWall(int facingValue) {
+        if (NON_WALL_VALUES.contains(facingValue)) {
+            return "1";
+        } else {
+            return "0";
+        }
     }
 
     int getFacingMapValue(int col, int row, int[][] map, Direction direction) {
